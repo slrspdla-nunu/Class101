@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브르 | CLASS101</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="centerbox">
+        <div class="topset">
+            <div class="language">
+               <a href="#"> <img src="image/languge.png" alt="언어 아이콘">Language</a>
+            </div>
+            <div class="loginbox">
+                <div class="login">
+                    <a href="login.html?from=membership">로그인</a>
+                    <a href="signup.html">회원가입</a>
+                    <a href="#">기업 문의</a>
+                </div>
+            </div>
+            <div class="logoutbox"><div class="logout"></div></div>
+        </div>
+
+        <h1><a href="index.html"><img src="image/logo.png" alt="로고"></a></h1>
+        <nav>
+            <ul class="gnb">
+                <li><a href="class.html">클래스</a></li>
+                <li><a href="membership.html">멤버십</a></li>
+                <li><a href="community.html">커뮤니티</a></li>
+                <li><a href="#">카테고리</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 크리에이터 홈 -->
+    <main id="creator-home">
+
+        <!-- 히어로 -->
+        <section class="cr_hero">
+            <div class="cr_hero_bg" style="background-image: url(https://cdn.class101.net/images/f4dc5ad2-e835-4701-9bd3-2a2eee1c823d);"></div>
+            <div class="cr_hero_inner">
+                <div class="cr_avatar"><img src="https://cdn.class101.net/images/0651386b-311d-458a-a5b4-84cd5b978c7a" alt="브르"></div>
+                <div class="cr_intro">
+                    <div class="cr_intro_text">
+                    <div class="cr_meta">
+                        <span class="cr_tag">#디지털 드로잉 크리에이터</span>
+                        <span class="cr_stat">누적 수강생 <b>2천명 이상</b></span>
+                    </div>
+                    <h2 class="cr_name">브르</h2>
+                    <p class="cr_bio">좋아하는 그림을 그려요. 최근, 그림에는 기분이 드러난다는 것을 실감합니다. 즐겁게 그림 그립시다!</p>
+                    <div class="cr_social">
+                        <a href="#">트위터 @baksaesama</a>
+                        <a href="#">인스타그램 @baksaesama_</a>
+                    </div>
+                    </div>
+                    <div class="cr_btns">
+                        <a href="payment-baksaesama.html" class="cr_join">멤버십 가입하기</a>
+                        <a href="#" class="cr_msg">메시지 보내기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 멤버십 CTA -->
+        <section class="cr_join_band">
+            <div class="cr_inner">
+                <div class="join_card">
+                    <div class="join_thumb"><img src="https://cdn.class101.net/images/f4dc5ad2-e835-4701-9bd3-2a2eee1c823d" alt=""></div>
+                    <div class="join_text">
+                        <span class="badge">브릉이 멤버십</span>
+                        <h3>월 1,000원으로 브르의 그림 세계를 더 가까이</h3>
+                        <p>멤버 전용 게시글과 매주 새로운 작업물, 작업 비하인드까지 함께 만나요.</p>
+                    </div>
+                    <a href="membership-baksaesama.html" class="join_btn">멤버십 시작하기
+                        <svg viewBox="0 0 24 24"><path d="M9 5L16 12L9 19" fill="none" stroke="#161616" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 커뮤니티 채널 -->
+        <section class="cr_section">
+            <div class="cr_inner">
+                <h2 class="cr_title"><b>커뮤니티</b> 채널</h2>
+                <div class="channel_chips">
+                    <a href="#" class="chip on">전체</a>
+                    <a href="#" class="chip">주간 공지사항</a>
+                    <a href="#" class="chip">브르공부와 이모저모</a>
+                    <a href="#" class="chip">주제</a>
+                    <a href="#" class="chip">주제에 맞춰 그리기</a>
+                    <a href="#" class="chip">Q&amp;A</a>
+                </div>
+
+                <ul class="post_grid">
+                    <li class="post_card" onclick="location.href='post-brr-topic.html'" style="cursor:pointer">
+                        <div class="post_top">
+                            <span class="post_author">브르 <em>크리에이터</em></span>
+                            <span class="post_meta"><span class="post_ch"># 주제</span> · 10일 전</span>
+                        </div>
+                        <h4 class="post_title">6월 주제</h4>
+                        <p class="post_excerpt">6월의 주제는 “프릴이 들어가는 여름 복장” 입니다. 두상, 흉상, 전신 선화 채색본 상관없이 진행합니다! 제목은 “6월”로 #주제에 맞춰 그리기 란에 올려주세요! 감사합니다!</p>
+                        <div class="post_stats"><span><svg viewBox="0 0 24 24"><path d="M12 20.3l-1.45-1.32C5.4 14.25 2 11.18 2 7.5 2 4.42 4.42 2 7.5 2c1.74 0 3.41.81 4.5 2.09C13.09 2.81 14.76 2 16.5 2 19.58 2 22 4.42 22 7.5c0 3.68-3.4 6.75-8.55 11.48L12 20.3z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>1</span><span>댓글 0</span><span>조회 8</span></div>
+                    </li>
+
+                    <li class="post_card">
+                        <div class="post_top">
+                            <span class="post_author">브르 <em>크리에이터</em></span>
+                            <span class="post_meta"><span class="post_ch"># 주간 공지사항</span> · 10일 전</span>
+                        </div>
+                        <h4 class="post_title">6월 활동 공지</h4>
+                        <p class="post_excerpt">안녕하세요 브르입니다! 수원 행사가 끝나고 이제 막 시간이 났습니다..! 첫번째 주제를 정해 그리기는 6월부터 시작하겠습니다! 브릉이분들은 자유롭게 #주제에맞춰그리기 란에 올려주시면 됩니다!</p>
+                        <div class="post_stats"><span><svg viewBox="0 0 24 24"><path d="M12 20.3l-1.45-1.32C5.4 14.25 2 11.18 2 7.5 2 4.42 4.42 2 7.5 2c1.74 0 3.41.81 4.5 2.09C13.09 2.81 14.76 2 16.5 2 19.58 2 22 4.42 22 7.5c0 3.68-3.4 6.75-8.55 11.48L12 20.3z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>1</span><span>댓글 0</span><span>조회 9</span></div>
+                    </li>
+
+                    <li class="post_card">
+                        <div class="post_top">
+                            <span class="post_author">브르 <em>크리에이터</em></span>
+                            <span class="post_meta"><span class="post_ch"># 주간 공지사항</span> · 111일 전</span>
+                        </div>
+                        <h4 class="post_title">멤버십을 시작하며</h4>
+                        <p class="post_excerpt">안녕하세요 여러분! 브르입니다. 2월 막바지에 인사드립니다! 만들어둔 클래스나 댓글로만 소통했었는데 이렇게 커뮤니티가 만들어져 기쁩니다. 부족하지만 커뮤니티 활동하면서 서로 얻어가는 게 많았으면 좋겠습니다!</p>
+                        <div class="post_stats"><span><svg viewBox="0 0 24 24"><path d="M12 20.3l-1.45-1.32C5.4 14.25 2 11.18 2 7.5 2 4.42 4.42 2 7.5 2c1.74 0 3.41.81 4.5 2.09C13.09 2.81 14.76 2 16.5 2 19.58 2 22 4.42 22 7.5c0 3.68-3.4 6.75-8.55 11.48L12 20.3z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>1</span><span>댓글 0</span><span>조회 15</span></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 클래스 -->
+        <section class="cr_section cr_classes">
+            <div class="cr_inner">
+                <div class="cr_classes_head">
+                    <h2 class="cr_title">CLASS101+ <b>클래스</b></h2>
+                    <a href="#" class="more_link">구독하기 ›</a>
+                </div>
+                <p class="cr_sub">하나의 구독으로 브르의 다양한 클래스를 즐겨보세요</p>
+                <ul class="class_grid">
+                    <li class="class_card">
+                        <a href="class-brr.html">
+                            <div class="class_thumb"><span class="plus_badge">101+</span><img src="https://cdn.class101.net/images/03bab256-6db3-4b08-b30e-38752c48637a" alt=""></div>
+                            <div class="class_body">
+                                <p class="class_title">선만으로도 반짝반짝, 펜촉으로 그리는 순정만화 같은 캐릭터</p>
+                                <span class="class_level">초급 · 브르</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer">
+        <div class="container">
+            <div class="textbox_top">
+                <div class="text_left">
+                    <div class="box">
+                        <h3>고객센터</h3>
+                        <span>오전 10시 ~ 오후 6시 (주말, 공휴일 제외)</span>
+                        <a href="#" class="botton">문의하기</a>
+                    </div>
+                    <div class="icons">
+                        <div class="down">
+                            <a href="#"><img src="image/app_store_icon.png" alt=""></a>
+                            <a href="#"><img src="image/google_play_icon.png" alt=""></a>
+                        </div>
+                        <div class="sns_icon">
+                            <a href="#"><img src="image/sns_icon1.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon2.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon3.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon4.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon5.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="text_right">
+                    <li class="box">
+                         <a href="#">공지사항</a>
+                         <a href="#">전체 카테고리</a>
+                         <a href="#">헬프센터</a>
+                         <a href="#">지원 기기 및 이용환경</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">크리에이터 지원</a>
+                         <a href="#">지식재산권 침해 신고센터</a>
+                         <a href="#">국비 지원</a>
+                         <a href="#">기업고객 문의</a>
+                         <a href="#">클래스 개별 구매</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">개인정보 처리방침</a>
+                         <a href="#">이용약관</a>
+                         <a href="#">기프트카드 및 캐시 이용약관</a>
+                         <a href="#">환불정책</a>
+                         <a href="#">청소년 보호 정책</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">사업자 정보 확인</a>
+                         <a href="#">제휴 및 대외협력</a>
+                         <a href="#">채용</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="textbox_bottom">
+                <div class="info1">
+                    <span>주식회사클래스101</span>
+                    <span>대표 공대선</span>
+                    <span>서울특별시 강남구 도곡루 111 (역삼동) 미진빌딩 6층, 13층</span>
+                    <span>대표전화 : 1800-2109</span>
+                    <span>이메일 : ask@101.inc</span>
+                </div>
+                <div class="info2">
+                    <span>사업자등록번호 : 457-81-00277</span>
+                    <span>통신판매업신고 : 2022-서울강남-02525</span>
+                    <span>클라우드 호스팅 : Amazon Web Services Korea LLC</span>
+                </div>
+                <div class="info3">
+                    <span>사업자 정보 자세히 보기</span>
+                    <img src="image/arrow4.png" alt="">
+                </div>
+                <div class="info4">
+                    <span>클래스101은 통신판매중개자로서 중개하는 거래에 대하여 책임을 부담하지 않습니다.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/category-menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멤버십 | CLASS101</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="centerbox">
+        <div class="topset">
+            <div class="language">
+               <a href="#"> <img src="image/languge.png" alt="언어 아이콘">Language</a>
+            </div>
+
+            <div class="loginbox">
+                <div class="login">
+                    <a href="login.html?from=membership">로그인</a>
+                    <a href="signup.html">회원가입</a>
+                    <a href="#">기업 문의</a>
+                </div>
+            </div>
+
+            <div class="logoutbox">
+                <div class="logout"></div>
+            </div>
+        </div>
+
+        <h1><a href="index.html"><img src="image/logo.png" alt="로고"></a></h1>
+        <nav>
+            <ul class="gnb">
+                <li>
+                    <a href="class.html">클래스</a>
+                </li>
+                <li>
+                    <a href="membership.html">멤버십</a>
+                </li>
+                <li>
+                    <a href="community.html">커뮤니티</a>
+                </li>
+                <li>
+                    <a href="#">카테고리</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 서브페이지 시작 -->
+    <main id="membership">
+
+        <!-- 오렌지 히어로 배너 (Swiper 슬라이더) -->
+        <section class="mem_hero">
+            <div class="swiper hero_swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image: url(image/sub_hero.png);">
+                        <div class="mem_hero_inner">
+                            <h2>팬들이 기다리는 프리미엄 혜택,<br>멤버십으로 완성하세요!</h2>
+                            <p>클래스나 커뮤니티에선 다 담을 수 없었던 깊이 있는 이야기와 노하우,<br>이제 멤버십에서 마음껏 펼쳐보세요.</p>
+                            <a href="#" class="hero_btn">멤버십 시작하기 <svg class="btn_arrow" viewBox="0 0 24 24"><path d="M9 5L16 12L9 19" fill="none" stroke="#161616" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image: url(image/sub_hero2.png);">
+                        <div class="mem_hero_inner">
+                            <h2>6200개 클래스를 구독 하나로,<br>매주 새로운 클래스가 추가됩니다</h2>
+                            <p>관심 있는 모든 분야를 멤버십 하나로 무제한,<br>오늘부터 부담 없이 시작해보세요.</p>
+                            <a href="#" class="hero_btn">멤버십 시작하기 <svg class="btn_arrow" viewBox="0 0 24 24"><path d="M9 5L16 12L9 19" fill="none" stroke="#161616" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image: url(image/sub_hero3.png);">
+                        <div class="mem_hero_inner">
+                            <h2>지금 가입하면<br>첫 달 특별 할인 혜택!</h2>
+                            <p>놓치면 아까운 한정 프로모션,<br>가장 좋은 가격으로 멤버십을 시작하세요.</p>
+                            <a href="#" class="hero_btn">멤버십 시작하기 <svg class="btn_arrow" viewBox="0 0 24 24"><path d="M9 5L16 12L9 19" fill="none" stroke="#161616" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image: url(image/sub_hero4.png);">
+                        <div class="mem_hero_inner">
+                            <h2>크리에이터의 깊이 있는 노하우,<br>멤버십에서 마음껏 누리세요</h2>
+                            <p>클래스에선 다 담지 못한 비하인드와 노하우까지,<br>멤버십에서만 만나보세요.</p>
+                            <a href="#" class="hero_btn">멤버십 시작하기 <svg class="btn_arrow" viewBox="0 0 24 24"><path d="M9 5L16 12L9 19" fill="none" stroke="#161616" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image: url(image/sub_hero5.png);">
+                        <div class="mem_hero_inner">
+                            <h2>원하는 카테고리만 골라<br>나에게 맞게 구독하세요</h2>
+                            <p>금융부터 드로잉, 운동까지 다양한 분야를<br>내 취향대로 자유롭게 선택하세요.</p>
+                            <a href="#" class="hero_btn">멤버십 시작하기 <svg class="btn_arrow" viewBox="0 0 24 24"><path d="M9 5L16 12L9 19" fill="none" stroke="#161616" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"><svg viewBox="0 0 24 24"><path d="M15 5L8 12L15 19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="swiper-button-next"><svg viewBox="0 0 24 24"><path d="M9 5L16 12L9 19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            </div>
+        </section>
+
+        <!-- 노란 구독 띠 배너 -->
+        <section class="mem_subscribe">
+            <img class="spark s1" src="image/Star1.png" alt="">
+            <img class="spark s2" src="image/Star3.png" alt="">
+            <img class="spark s3" src="image/Star2.png" alt="">
+            <img class="spark s4" src="image/Star2.png" alt="">
+            <div class="mem_subscribe_inner">
+                <div class="subscribe_copy">
+                    <h3>6200개 이상의 클래스를 구독으로 한 번에!</h3>
+                    <p>매 주 새로운 클래스가 추가됩니다</p>
+                </div>
+                <a href="#" class="subscribe_btn">구독 시작하기</a>
+            </div>
+        </section>
+
+        <!-- 추천 멤버십 -->
+        <section class="mem_recommend">
+            <div class="mem_inner">
+                <h2 class="mem_title">지금, 회원님을 위한 <b>추천 멤버십</b>
+                    <a href="#" class="refresh"><svg viewBox="933.5 1136.5 26 26"><path d="M946.5 1161.83C943.057 1161.83 940.141 1160.64 937.751 1158.25C935.362 1155.86 934.167 1152.94 934.167 1149.5C934.167 1146.06 935.362 1143.14 937.751 1140.75C940.141 1138.36 943.057 1137.17 946.5 1137.17C948.273 1137.17 949.969 1137.53 951.588 1138.26C953.207 1139 954.594 1140.04 955.75 1141.41V1137.17H958.834V1147.96H948.042V1144.87H954.517C953.695 1143.44 952.571 1142.3 951.145 1141.48C949.719 1140.66 948.17 1140.25 946.5 1140.25C943.931 1140.25 941.747 1141.15 939.948 1142.95C938.15 1144.75 937.25 1146.93 937.25 1149.5C937.25 1152.07 938.15 1154.25 939.948 1156.05C941.747 1157.85 943.931 1158.75 946.5 1158.75C948.479 1158.75 950.265 1158.18 951.858 1157.05C953.451 1155.92 954.568 1154.43 955.211 1152.58H958.448C957.729 1155.31 956.264 1157.53 954.054 1159.25C951.845 1160.97 949.327 1161.83 946.5 1161.83Z" fill="#E5F800"/></svg></a>
+                </h2>
+
+                <ul class="mem_card_list">
+                    <li class="mem_card">
+                        <a href="membership-baksaesama.html">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/f4dc5ad2-e835-4701-9bd3-2a2eee1c823d" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>브릉이</h3>
+                                        <p>브르의 미소년, 미소녀에 대한 고찰 함께 취향을 찾아보아요!</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="price">월 1,000원</span>
+                                    <span class="tag">#디지털 드로잉</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><span class="ribbon">SALE EVENT</span><img src="https://cdn.class101.net/images/8bbcba96-0106-4d26-a4dc-fc69bef4fdb5" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>스토리텔링 플러스</h3>
+                                        <p>스토리텔링 강의 외에 더 필요한 것들! 영상, 자료, 작가 개인 작업실 실황까지 다양하게 나눕니다</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="sale">25%</span>
+                                    <span class="price">월 15,000원</span>
+                                    <span class="tag">#비즈니스</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/65d2e795-06bf-4c7e-b3e9-dfb2f6ba2591" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>스톡 스타터 멤버십</h3>
+                                        <p>평일 매일 키워드+도안 제공! 고민 없이 따라 그리며 스톡 작가 시작하세요!</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="price">월 5,900원</span>
+                                    <span class="tag">#디지털 드로잉</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/3eeac841-95ae-4a0e-8af3-e51cdce8033c" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>햄찌 스튜디오</h3>
+                                        <p>매달 작품을 완성하며 성장하는 드로잉 멤버십</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="sale">40%</span>
+                                    <span class="price">월 30,000원</span>
+                                    <span class="tag">#디지털드로잉</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><span class="ribbon">SALE EVENT</span><img src="https://cdn.class101.net/images/5ea5fb3e-d0c8-43c7-824e-7d178d1f5248/1200x630" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>월간인형 시즌1-4 입장권</h3>
+                                        <p>시은맘의 월간인형 시즌1-4 커뮤니티 입장권입니다</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="sale">32%</span>
+                                    <span class="price">161,200원</span>
+                                    <span class="tag">#공예</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/06925cda-79aa-42eb-bc59-50abc7122c6f" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>연남동 심리카페 On</h3>
+                                        <p>당신에게 필요한 루틴을 커피 한잔 값으로 이용해 보세요.</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="price">월 3,900원</span>
+                                    <span class="tag">#라이프스타일</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 카테고리별 멤버십 -->
+        <section class="mem_category">
+            <div class="mem_inner">
+                <h2 class="mem_title2"><b>카테고리</b>별 멤버십</h2>
+
+                <div class="filter">
+                    <a href="#" class="chip on">전체</a>
+                    <a href="#" class="chip">금융·재테크</a>
+                    <a href="#" class="chip">디지털 드로잉</a>
+                    <a href="#" class="chip">창업·부업</a>
+                    <a href="#" class="chip">라이프스타일</a>
+                    <a href="#" class="chip">비즈니스</a>
+                    <a href="#" class="chip">사진·영상</a>
+                    <a href="#" class="chip">운동</a>
+                    <a href="#" class="chip">공예</a>
+                    <a href="#" class="chip">디자인</a>
+                    <a href="#" class="chip">요리·음료</a>
+                    <a href="#" class="chip">음악</a>
+                    <a href="#" class="chip">아이 교육</a>
+                    <a href="#" class="chip">영어</a>
+                    <a href="#" class="chip">부모 교육</a>
+                    <a href="#" class="chip">외국어 시험</a>
+                </div>
+
+                <div class="sort">
+                    <button type="button" class="sort_btn"><span class="label">인기순</span> <span class="caret">&#9662;</span></button>
+                    <ul class="sort_menu">
+                        <li class="on">인기순</li>
+                        <li>최신순</li>
+                        <li>오래된 순</li>
+                        <li>가격 낮은 순</li>
+                        <li>가격 높은 순</li>
+                    </ul>
+                </div>
+
+                <ul class="mem_card_list grid3">
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/456d70c0-9ce8-43cc-ae9b-f84eac756bbc" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>쉬운 사주 이규호</h3>
+                                        <p>쉬운 사주 이규호의 베이직 멤버십입니다.</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="price">월 1,000원</span>
+                                    <span class="tag">#라이프스타일</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><span class="ribbon">SALE EVENT</span><img src="https://cdn.class101.net/images/c17a87e6-6c4c-43d2-8629-50ab9ea4063b" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>퀀트는 게만아</h3>
+                                        <p>게만아 최신 컨텐츠의 코드를 120일 먼저 만나볼 수 있는 멤버십</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="sale">25%</span>
+                                    <span class="price">월 15,000원</span>
+                                    <span class="tag">#금융 · 재테크</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/a31544d8-5072-4a65-ace7-1efaa50b5f8e" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>책 만드는 사람들</h3>
+                                        <p>계속 쓰고 만들고 출판하고 싶은 사람들을 위한 지속가능한 출판 창작 커뮤니티 멤버십</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="price">월 25,000원</span>
+                                    <span class="tag">#비즈니스</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/5a1cb60f-8472-427e-9ac0-811b2a5a2599" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>월간일평 멤버십</h3>
+                                        <p>성공적인 당근마켓 비즈니스를 위해 일평사장이 최신 트렌드와 판매 노하우를 제공합니다.</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="price">월 10,000원</span>
+                                    <span class="tag">#창업 · 부업</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><span class="ribbon">SALE EVENT</span><img src="https://cdn.class101.net/images/37f49f8d-736d-4ab9-a22a-ed06729cd6fb" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>초기창업+자금조달 패키지</h3>
+                                        <p>정부지원사업 선정과 사업계획서 완성도를 극대화할 수 있는 콘텐츠를 제공합니다.</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="sale">59%</span>
+                                    <span class="price">월 4,900원</span>
+                                    <span class="tag">#창업 · 부업</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/e35f685d-7e36-45e9-ad0e-83b00cec329f" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>세무그루 119 Q&amp;A</h3>
+                                        <p>당장 해결해야 할 실무 질문이 산더미인 5년 미만 '세린이'를 위한 멤버십</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="price">월 33,000원</span>
+                                    <span class="tag">#비즈니스</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/f5554b44-6555-44f2-a482-23bf3f443ec0" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>어린이조선일보 데스크 플랜</h3>
+                                        <p>모든 콘텐츠 게시판 + 명예 기자 등록 + 특전 혜택</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="price">월 19,900원</span>
+                                    <span class="tag">#아이 교육</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><span class="ribbon">SALE EVENT</span><img src="https://cdn.class101.net/images/7709ef61-dfad-4bd8-9ddd-0face9cb24d8" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>제약바이오 종목분석 리포트</h3>
+                                        <p>생명과학 전문가가 전하는 한-미 제약·바이오 핵심 종목 분석 리포트 정기 발행 및 실시간 Q&amp;A</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="sale">50%</span>
+                                    <span class="price">월 4,900원</span>
+                                    <span class="tag">#금융 · 재테크</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="mem_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/3083edd1-21e4-465f-82cf-83cf4084238f" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text">
+                                        <h3>스윙 투자 실전 매매 과정</h3>
+                                        <p>스스로 종목을 선정하고 대응할 수 있는 실전 매매 콘텐츠를 제공합니다.</p>
+                                    </div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="price">월 14,900원</span>
+                                    <span class="tag">#금융 · 재테크</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="#" class="more_btn">전체 멤버십 보기 <svg viewBox="1048.5 4093.5 23 14"><path d="M1060 4102.08L1068.43 4094L1071 4096.46L1060 4107L1049 4096.46L1051.57 4094L1060 4102.08Z" fill="#161616"/></svg></a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer">
+        <div class="container">
+            <div class="textbox_top">
+                <div class="text_left">
+                    <div class="box">
+                        <h3>고객센터</h3>
+                        <span>오전 10시 ~ 오후 6시 (주말, 공휴일 제외)</span>
+                        <a href="#" class="botton">문의하기</a>
+                    </div>
+                    <div class="icons">
+                        <div class="down">
+                            <a href="#"><img src="image/app_store_icon.png" alt=""></a>
+                            <a href="#"><img src="image/google_play_icon.png" alt=""></a>
+                        </div>
+                        <div class="sns_icon">
+                            <a href="#"><img src="image/sns_icon1.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon2.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon3.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon4.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon5.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="text_right">
+                    <li class="box">
+                         <a href="#">공지사항</a>
+                         <a href="#">전체 카테고리</a>
+                         <a href="#">헬프센터</a>
+                         <a href="#">지원 기기 및 이용환경</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">크리에이터 지원</a>
+                         <a href="#">지식재산권 침해 신고센터</a>
+                         <a href="#">국비 지원</a>
+                         <a href="#">기업고객 문의</a>
+                         <a href="#">클래스 개별 구매</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">개인정보 처리방침</a>
+                         <a href="#">이용약관</a>
+                         <a href="#">기프트카드 및 캐시 이용약관</a>
+                         <a href="#">환불정책</a>
+                         <a href="#">청소년 보호 정책</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">사업자 정보 확인</a>
+                         <a href="#">제휴 및 대외협력</a>
+                         <a href="#">채용</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="textbox_bottom">
+                <div class="info1">
+                    <span>주식회사클래스101</span>
+                    <span>대표 공대선</span>
+                    <span>서울특별시 강남구 도곡루 111 (역삼동) 미진빌딩 6층, 13층</span>
+                    <span>대표전화 : 1800-2109</span>
+                    <span>이메일 : ask@101.inc</span>
+                </div>
+                <div class="info2">
+                    <span>사업자등록번호 : 457-81-00277</span>
+                    <span>통신판매업신고 : 2022-서울강남-02525</span>
+                    <span>클라우드 호스팅 : Amazon Web Services Korea LLC</span>
+                </div>
+                <div class="info3">
+                    <span>사업자 정보 자세히 보기</span>
+                    <img src="image/arrow4.png" alt="">
+                </div>
+                <div class="info4">
+                    <span>클래스101은 통신판매중개자로서 중개하는 거래에 대하여 책임을 부담하지 않습니다.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper('.hero_swiper', {
+            loop: true,
+            speed: 600,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: '.hero_swiper .swiper-pagination', clickable: true },
+            navigation: { prevEl: '.hero_swiper .swiper-button-prev', nextEl: '.hero_swiper .swiper-button-next' }
+        });
+
+        var chips = document.querySelectorAll('.mem_category .filter .chip');
+        chips.forEach(function (chip) {
+            chip.addEventListener('click', function (e) {
+                e.preventDefault();
+                chips.forEach(function (c) { c.classList.remove('on'); });
+                chip.classList.add('on');
+            });
+        });
+
+        var sort = document.querySelector('.mem_category .sort');
+        if (sort) {
+            var sortBtn = sort.querySelector('.sort_btn');
+            var sortLabel = sort.querySelector('.label');
+            var sortItems = sort.querySelectorAll('.sort_menu li');
+            sortBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                sort.classList.toggle('open');
+            });
+            sortItems.forEach(function (li) {
+                li.addEventListener('click', function () {
+                    sortItems.forEach(function (x) { x.classList.remove('on'); });
+                    li.classList.add('on');
+                    sortLabel.textContent = li.textContent;
+                    sort.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', function (e) {
+                if (!sort.contains(e.target)) { sort.classList.remove('open'); }
+            });
+        }
+    </script>
+    <script src="js/category-menu.js"></script>
+</body>
+</html>

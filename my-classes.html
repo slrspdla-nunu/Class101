@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 클래스 | 마이페이지 | CLASS101</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="centerbox">
+        <div class="topset">
+            <div class="language">
+               <a href="#"> <img src="image/languge.png" alt="언어 아이콘">Language</a>
+            </div>
+            <div class="loginbox">
+                <div class="login">
+                    <a href="login.html?from=class">로그인</a>
+                    <a href="signup.html">회원가입</a>
+                    <a href="#">기업 문의</a>
+                </div>
+            </div>
+            <div class="logoutbox"><div class="logout"></div></div>
+        </div>
+
+        <h1><a href="index.html"><img src="image/logo.png" alt="로고"></a></h1>
+        <nav>
+            <ul class="gnb">
+                <li><a href="class.html">클래스</a></li>
+                <li><a href="membership.html">멤버십</a></li>
+                <li><a href="community.html">커뮤니티</a></li>
+                <li><a href="#">카테고리</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="mypage">
+        <div class="my_inner">
+            <h2 class="my_welcome">마이페이지</h2>
+
+            <div class="my_layout">
+                <aside class="my_nav">
+                    <div class="my_profile">
+                        <div class="my_avatar" id="myAvatar">T</div>
+                        <p class="my_name" id="myName">test</p>
+                        <p class="my_email" id="myEmail">test@gmail.com</p>
+                    </div>
+                    <ul class="my_menu">
+                        <li><a href="mypage.html">대시보드</a></li>
+                        <li><a href="my-classes.html" class="on">내 클래스</a></li>
+                        <li><a href="membership.html">멤버십</a></li>
+                        <li><a href="#">관심 목록</a></li>
+                        <li><a href="#">쿠폰 · 캐시</a></li>
+                        <li><a href="settings.html">계정 설정</a></li>
+                        <li><a href="#" class="logout_a" id="logoutBtn">로그아웃</a></li>
+                    </ul>
+                </aside>
+
+                <div class="my_main">
+                    <h2 class="my_ptitle">내 클래스</h2>
+
+                    <div class="my_tabs">
+                        <button type="button" class="on" data-f="all">전체 6</button>
+                        <button type="button" data-f="ing">수강 중 4</button>
+                        <button type="button" data-f="done">수강 완료 2</button>
+                    </div>
+
+                    <ul class="my_classes">
+                        <li class="cls" data-status="ing">
+                            <div class="ct"><img src="https://cdn.class101.net/images/03bab256-6db3-4b08-b30e-38752c48637a" alt=""></div>
+                            <div class="cb">
+                                <p class="cn">선만으로도 반짝반짝, 펜촉으로 그리는 순정만화 같은 캐릭터</p>
+                                <div class="cg"><span style="width:42%"></span></div>
+                                <p class="cp">42% 수강 중 · 브르</p>
+                            </div>
+                        </li>
+                        <li class="cls" data-status="ing">
+                            <div class="ct"><img src="https://cdn.class101.net/images/cf09e8f5-06b7-44fd-82ab-b686ea62ad2a" alt=""></div>
+                            <div class="cb">
+                                <p class="cn">무명 작가가 인기 작가가 된 비결! 인기 이모티콘 만들기</p>
+                                <div class="cg"><span style="width:18%"></span></div>
+                                <p class="cp">18% 수강 중 · 유랑</p>
+                            </div>
+                        </li>
+                        <li class="cls" data-status="ing">
+                            <div class="ct"><img src="https://cdn.class101.net/images/7b501ceb-2255-4ed5-99ba-d228c429dcd8" alt=""></div>
+                            <div class="cb">
+                                <p class="cn">전업투자자가 되는 법: 기초 투자 원리와 매매 전략</p>
+                                <div class="cg"><span style="width:73%"></span></div>
+                                <p class="cp">73% 수강 중 · JB 김종봉</p>
+                            </div>
+                        </li>
+                        <li class="cls" data-status="ing">
+                            <div class="ct"><img src="https://cdn.class101.net/images/80a7a33a-f216-49c9-a11d-2f10ed4588bb" alt=""></div>
+                            <div class="cb">
+                                <p class="cn">스마트스토어로 월 100만원 만들기</p>
+                                <div class="cg"><span style="width:9%"></span></div>
+                                <p class="cp">9% 수강 중 · 주언규PD</p>
+                            </div>
+                        </li>
+                        <li class="cls" data-status="done">
+                            <div class="ct"><img src="https://cdn.class101.net/images/b0f8a4d4-4836-46c5-b7f8-0a741ead5782" alt=""></div>
+                            <div class="cb">
+                                <p class="cn">구글 애드센스 기초: 노트북 하나로 만드는 블로그 수익 자동화</p>
+                                <div class="cg"><span style="width:100%"></span></div>
+                                <p class="cp">수강 완료 · 선한부자 오가닉</p>
+                            </div>
+                        </li>
+                        <li class="cls" data-status="done">
+                            <div class="ct"><img src="https://cdn.class101.net/images/07046a4f-1e8c-40a7-bd58-a405a0d5aa61" alt=""></div>
+                            <div class="cb">
+                                <p class="cn">유학 없이도 유창한 영어 회화, 나 혼자서 100% 영어 독학법</p>
+                                <div class="cg"><span style="width:100%"></span></div>
+                                <p class="cp">수강 완료 · 근영쌤</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer">
+        <div class="container">
+            <div class="textbox_top">
+                <div class="text_left">
+                    <div class="box">
+                        <h3>고객센터</h3>
+                        <span>오전 10시 ~ 오후 6시 (주말, 공휴일 제외)</span>
+                        <a href="#" class="botton">문의하기</a>
+                    </div>
+                    <div class="icons">
+                        <div class="down">
+                            <a href="#"><img src="image/app_store_icon.png" alt=""></a>
+                            <a href="#"><img src="image/google_play_icon.png" alt=""></a>
+                        </div>
+                        <div class="sns_icon">
+                            <a href="#"><img src="image/sns_icon1.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon2.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon3.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon4.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon5.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="text_right">
+                    <li class="box">
+                         <a href="#">공지사항</a>
+                         <a href="#">전체 카테고리</a>
+                         <a href="#">헬프센터</a>
+                         <a href="#">지원 기기 및 이용환경</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">크리에이터 지원</a>
+                         <a href="#">지식재산권 침해 신고센터</a>
+                         <a href="#">국비 지원</a>
+                         <a href="#">기업고객 문의</a>
+                         <a href="#">클래스 개별 구매</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">개인정보 처리방침</a>
+                         <a href="#">이용약관</a>
+                         <a href="#">기프트카드 및 캐시 이용약관</a>
+                         <a href="#">환불정책</a>
+                         <a href="#">청소년 보호 정책</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">사업자 정보 확인</a>
+                         <a href="#">제휴 및 대외협력</a>
+                         <a href="#">채용</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="textbox_bottom">
+                <div class="info1">
+                    <span>주식회사클래스101</span>
+                    <span>대표 공대선</span>
+                    <span>서울특별시 강남구 도곡루 111 (역삼동) 미진빌딩 6층, 13층</span>
+                    <span>대표전화 : 1800-2109</span>
+                    <span>이메일 : ask@101.inc</span>
+                </div>
+                <div class="info2">
+                    <span>사업자등록번호 : 457-81-00277</span>
+                    <span>통신판매업신고 : 2022-서울강남-02525</span>
+                    <span>클라우드 호스팅 : Amazon Web Services Korea LLC</span>
+                </div>
+                <div class="info3">
+                    <span>사업자 정보 자세히 보기</span>
+                    <img src="image/arrow4.png" alt="">
+                </div>
+                <div class="info4">
+                    <span>클래스101은 통신판매중개자로서 중개하는 거래에 대하여 책임을 부담하지 않습니다.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/category-menu.js"></script>
+    <script>
+        (function () {
+            var user = null;
+            try { user = JSON.parse(localStorage.getItem('c101_user')); } catch (e) {}
+            if (!user) { location.href = 'login.html?from=class'; return; }
+            var nick = user.nick || (user.email ? user.email.split('@')[0] : '회원');
+            document.getElementById('myName').textContent = nick;
+            document.getElementById('myEmail').textContent = user.email || '';
+            document.getElementById('myAvatar').textContent = nick.charAt(0).toUpperCase();
+            document.getElementById('logoutBtn').addEventListener('click', function (e) {
+                e.preventDefault();
+                try { localStorage.removeItem('c101_user'); } catch (e) {}
+                location.href = 'index.html';
+            });
+
+            // 탭 필터
+            var tabs = document.querySelectorAll('.my_tabs button');
+            var cards = document.querySelectorAll('.my_classes .cls');
+            tabs.forEach(function (t) {
+                t.addEventListener('click', function () {
+                    tabs.forEach(function (x) { x.classList.remove('on'); });
+                    t.classList.add('on');
+                    var f = t.getAttribute('data-f');
+                    cards.forEach(function (c) {
+                        c.classList.toggle('hide', f !== 'all' && c.getAttribute('data-status') !== f);
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일러스트 클래스 | CLASS101</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="centerbox">
+        <div class="topset">
+            <div class="language">
+               <a href="#"> <img src="image/languge.png" alt="언어 아이콘">Language</a>
+            </div>
+            <div class="loginbox">
+                <div class="login">
+                    <a href="login.html?from=class">로그인</a>
+                    <a href="signup.html">회원가입</a>
+                    <a href="#">기업 문의</a>
+                </div>
+            </div>
+            <div class="logoutbox"><div class="logout"></div></div>
+        </div>
+
+        <h1><a href="index.html"><img src="image/logo.png" alt="로고"></a></h1>
+        <nav>
+            <ul class="gnb">
+                <li><a href="class.html">클래스</a></li>
+                <li><a href="membership.html">멤버십</a></li>
+                <li><a href="community.html">커뮤니티</a></li>
+                <li><a href="#">카테고리</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="class-page">
+        <!-- 카테고리 헤더 -->
+        <section class="cls_search_wrap">
+            <div class="cls_inner">
+                <h2>나에게 꼭 맞는,<br><b>일러스트 클래스</b>를 찾아보세요</h2>
+                <p>관심 있는 일러스트를 검색하고, 오늘 바로 시작해보세요.</p>
+                <form class="cls_searchbar" onsubmit="return false;">
+                    <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    <input type="text" placeholder="어떤 클래스를 찾으세요?">
+                    <button type="submit">검색</button>
+                </form>
+                <div class="cls_keywords">
+                    <span>인기 검색어</span>
+                    <a href="#">아이패드 드로잉</a>
+                    <a href="#">인스타툰</a>
+                    <a href="#">캐릭터 일러스트</a>
+                    <a href="#">수채화</a>
+                    <a href="#">클립스튜디오</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 인기 클래스 TOP 10 -->
+        <section class="cls_section cls_popular">
+            <div class="cls_inner">
+                <div class="cls_pophead">
+                    <div>
+                        <h2 class="cls_title">지금 인기 있는 <b>일러스트 클래스 TOP 10</b></h2>
+                        <p class="cls_desc">수강생들이 가장 많이 찾는 일러스트 클래스예요. 옆으로 드래그해 둘러보세요.</p>
+                    </div>
+                    <div class="cls_navbtns">
+                        <button type="button" class="cls_nav" id="topPrev" aria-label="이전"><svg viewBox="0 0 24 24"><path d="M15 5L8 12L15 19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <button type="button" class="cls_nav" id="topNext" aria-label="다음"><svg viewBox="0 0 24 24"><path d="M9 5L16 12L9 19" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    </div>
+                </div>
+
+                <div class="cls_scroll" id="topScroll">
+                <ul class="cls_row">
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 1위</span><img src="https://cdn.class101.net/images/b736f4ff-862e-4e8a-af67-3c054272e020" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>단순하고 정확하게! 일기 쓰듯 쉽게 기록하는 귀찮의 아이패드 일상 드로잉</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9 <em>(325)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 2위</span><img src="https://cdn.class101.net/images/fdbfc9fb-2415-4387-99e2-fee9e66d3f45" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>그림, 아직도 취미로만? 아이패드 하나로 완성하는 감성 일러스트와 수익화까지</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7 <em>(3)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 3위</span><img src="https://cdn.class101.net/images/5a5c44d0-4908-4b3a-9a95-490e0b778bd9" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>[101루틴] 서툴러도 꾸준히, 하루 한 장 인스타툰</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9 <em>(154)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 4위</span><img src="https://cdn.class101.net/images/5a0a5915-cf4e-4220-8ff1-17e41062125a" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>아이패드 드로잉 기초부터 굿즈 제작까지 흐스흐와 함께해요</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8 <em>(391)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 5위</span><img src="https://cdn.class101.net/images/3ad0add3-a841-4844-b58e-972002b81d00" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>따뜻함을 품은 감성 드로잉, 하루 1시간 네이버폼으로 수익화까지</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7 <em>(70)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 6위</span><img src="https://cdn.class101.net/images/28b56233-b5c7-45c3-983f-79dfb6498de7" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>자연을 닮은 색감으로 칠하는 클립스튜디오 캐릭터 일러스트</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9 <em>(112)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 7위</span><img src="https://cdn.class101.net/images/d34b52ff-aa44-4b28-a550-6199c7b63eac" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>따뜻함을 한 층 더한, 생동감 있는 건물 일러스트 그리기</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8 <em>(42)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 8위</span><img src="https://cdn.class101.net/images/1f697370-4192-47db-a953-7c8329cdef8d" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>예쁘고 잘생긴 캐릭터로 매력적인 로맨틱 일러스트와 웹툰 그리기</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9 <em>(30)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 9위</span><img src="https://cdn.class101.net/images/b5cba6ff-09d6-4f2a-85df-4970acd5f185" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>작은 것들을 아기자기하게 그려요. 보담의 아이패드 드로잉</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8 <em>(50)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 10위</span><img src="https://cdn.class101.net/images/cd6ada48-f48f-49e4-a6ac-99779d956475" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>아이패드로 만나보는 수채화</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.6 <em>(56)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 전체 클래스 -->
+        <section class="cls_section cls_bycat mem_category">
+            <div class="cls_inner">
+                <h2 class="cls_title">전체 <b>일러스트 클래스</b></h2>
+                <p class="cls_desc">총 16개의 클래스를 모두 둘러보세요.</p>
+
+                <div class="filter">
+                    <a href="#" class="chip on">전체</a>
+                    <a href="#" class="chip">아이패드</a>
+                    <a href="#" class="chip">클립스튜디오</a>
+                    <a href="#" class="chip">캐릭터</a>
+                    <a href="#" class="chip">감성 · 일상</a>
+                    <a href="#" class="chip">수채화</a>
+                    <a href="#" class="chip">수익화</a>
+                </div>
+
+                <div class="sort">
+                    <button type="button" class="sort_btn"><span class="label">인기순</span> <span class="caret">&#9662;</span></button>
+                    <ul class="sort_menu">
+                        <li class="on">인기순</li>
+                        <li>최신순</li>
+                        <li>평점 높은 순</li>
+                        <li>수강생 많은 순</li>
+                    </ul>
+                </div>
+
+                <ul class="cls_grid">
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 1위</span><img src="https://cdn.class101.net/images/b736f4ff-862e-4e8a-af67-3c054272e020" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>단순하고 정확하게! 일기 쓰듯 쉽게 기록하는 귀찮의 아이패드 일상 드로잉</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9 <em>(325)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 2위</span><img src="https://cdn.class101.net/images/fdbfc9fb-2415-4387-99e2-fee9e66d3f45" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>그림, 아직도 취미로만? 아이패드 하나로 완성하는 감성 일러스트와 수익화까지</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7 <em>(3)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 3위</span><img src="https://cdn.class101.net/images/5a5c44d0-4908-4b3a-9a95-490e0b778bd9" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>[101루틴] 서툴러도 꾸준히, 하루 한 장 인스타툰</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9 <em>(154)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 4위</span><img src="https://cdn.class101.net/images/5a0a5915-cf4e-4220-8ff1-17e41062125a" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>아이패드 드로잉 기초부터 굿즈 제작까지 흐스흐와 함께해요</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8 <em>(391)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 5위</span><img src="https://cdn.class101.net/images/3ad0add3-a841-4844-b58e-972002b81d00" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>따뜻함을 품은 감성 드로잉, 하루 1시간 네이버폼으로 수익화까지</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7 <em>(70)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 6위</span><img src="https://cdn.class101.net/images/28b56233-b5c7-45c3-983f-79dfb6498de7" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>자연을 닮은 색감으로 칠하는 클립스튜디오 캐릭터 일러스트</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9 <em>(112)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 7위</span><img src="https://cdn.class101.net/images/d34b52ff-aa44-4b28-a550-6199c7b63eac" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>따뜻함을 한 층 더한, 생동감 있는 건물 일러스트 그리기</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8 <em>(42)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 8위</span><img src="https://cdn.class101.net/images/1f697370-4192-47db-a953-7c8329cdef8d" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>예쁘고 잘생긴 캐릭터로 매력적인 로맨틱 일러스트와 웹툰 그리기</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9 <em>(30)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 9위</span><img src="https://cdn.class101.net/images/b5cba6ff-09d6-4f2a-85df-4970acd5f185" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>작은 것들을 아기자기하게 그려요. 보담의 아이패드 드로잉</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.8 <em>(50)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><span class="rank">일러스트 10위</span><img src="https://cdn.class101.net/images/cd6ada48-f48f-49e4-a6ac-99779d956475" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>아이패드로 만나보는 수채화</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.6 <em>(56)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/856a1be7-95ae-4f60-a896-f8bac5171a49" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>사랑을 담아 그리는 순정 일러스트, 이야기를 말하는 캐릭터 드로잉</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.5 <em>(118)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/cbbf0254-eac1-432c-89d0-53bcf3625b05" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>약국과 함께 펜 하나로 그리는 분위기 있는 인물, 나만의 세계</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.9 <em>(144)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/5b1d2a29-659e-4a98-a5b9-cca470a3a6c1" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>컬러와 페인팅을 즐길 수 있는 디지털 일러스트 클래스</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.5 <em>(19)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/7b4f5eb6-5742-4db9-a782-69e06d6710cf" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>쉽고 빠르게 매력적인 캐릭터 제작하고 이모티콘 굿즈로 수익내자!</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>5.0 <em>(6)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/436c2971-68ca-41c7-94a7-5eeb538745fc" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>레전드 남캐 작가 쩐구의 〈유형별 남캐 디자인의 모든 것〉</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.7 <em>(20)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cls_card">
+                        <a href="#">
+                            <div class="thumb"><img src="https://cdn.class101.net/images/a904e363-3182-442d-99e8-875f2309d7ea" alt=""></div>
+                            <div class="card_body">
+                                <div class="card_head">
+                                    <div class="card_text"><h3>아이패드로 담아보는 이야기, 빛과 연출로 표현해봐요</h3></div>
+                                    <span class="card_arrow"><img src="image/btn_arrow1.png" alt=""></span>
+                                </div>
+                                <div class="card_foot">
+                                    <span class="rate"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>4.6 <em>(17)</em></span>
+                                    <span class="tag">#일러스트</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <button type="button" class="more_btn">클래스 더보기
+                    <svg viewBox="0 0 21 13" fill="none"><path d="M2 2L10.5 10.5L19 2" stroke="#161616" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer">
+        <div class="container">
+            <div class="textbox_top">
+                <div class="text_left">
+                    <div class="box">
+                        <h3>고객센터</h3>
+                        <span>오전 10시 ~ 오후 6시 (주말, 공휴일 제외)</span>
+                        <a href="#" class="botton">문의하기</a>
+                    </div>
+                    <div class="icons">
+                        <div class="down">
+                            <a href="#"><img src="image/app_store_icon.png" alt=""></a>
+                            <a href="#"><img src="image/google_play_icon.png" alt=""></a>
+                        </div>
+                        <div class="sns_icon">
+                            <a href="#"><img src="image/sns_icon1.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon2.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon3.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon4.png" alt=""></a>
+                            <a href="#"><img src="image/sns_icon5.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="text_right">
+                    <li class="box">
+                         <a href="#">공지사항</a>
+                         <a href="#">전체 카테고리</a>
+                         <a href="#">헬프센터</a>
+                         <a href="#">지원 기기 및 이용환경</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">크리에이터 지원</a>
+                         <a href="#">지식재산권 침해 신고센터</a>
+                         <a href="#">국비 지원</a>
+                         <a href="#">기업고객 문의</a>
+                         <a href="#">클래스 개별 구매</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">개인정보 처리방침</a>
+                         <a href="#">이용약관</a>
+                         <a href="#">기프트카드 및 캐시 이용약관</a>
+                         <a href="#">환불정책</a>
+                         <a href="#">청소년 보호 정책</a>
+                    </li>
+                    <li class="box">
+                         <a href="#">사업자 정보 확인</a>
+                         <a href="#">제휴 및 대외협력</a>
+                         <a href="#">채용</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="textbox_bottom">
+                <div class="info1">
+                    <span>주식회사클래스101</span>
+                    <span>대표 공대선</span>
+                    <span>서울특별시 강남구 도곡루 111 (역삼동) 미진빌딩 6층, 13층</span>
+                    <span>대표전화 : 1800-2109</span>
+                    <span>이메일 : ask@101.inc</span>
+                </div>
+                <div class="info2">
+                    <span>사업자등록번호 : 457-81-00277</span>
+                    <span>통신판매업신고 : 2022-서울강남-02525</span>
+                    <span>클라우드 호스팅 : Amazon Web Services Korea LLC</span>
+                </div>
+                <div class="info3">
+                    <span>사업자 정보 자세히 보기</span>
+                    <img src="image/arrow4.png" alt="">
+                </div>
+                <div class="info4">
+                    <span>클래스101은 통신판매중개자로서 중개하는 거래에 대하여 책임을 부담하지 않습니다.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var chips = document.querySelectorAll('.mem_category .filter .chip');
+        chips.forEach(function (chip) {
+            chip.addEventListener('click', function (e) {
+                e.preventDefault();
+                chips.forEach(function (c) { c.classList.remove('on'); });
+                chip.classList.add('on');
+            });
+        });
+        var sort = document.querySelector('.mem_category .sort');
+        if (sort) {
+            var sortBtn = sort.querySelector('.sort_btn');
+            var sortLabel = sort.querySelector('.label');
+            var sortItems = sort.querySelectorAll('.sort_menu li');
+            sortBtn.addEventListener('click', function (e) { e.stopPropagation(); sort.classList.toggle('open'); });
+            sortItems.forEach(function (li) {
+                li.addEventListener('click', function () {
+                    sortItems.forEach(function (x) { x.classList.remove('on'); });
+                    li.classList.add('on');
+                    sortLabel.textContent = li.textContent;
+                    sort.classList.remove('open');
+                });
+            });
+            document.addEventListener('click', function (e) { if (!sort.contains(e.target)) { sort.classList.remove('open'); } });
+        }
+
+        // TOP 10 가로 드래그 스크롤
+        (function () {
+            var el = document.getElementById('topScroll');
+            if (!el) return;
+            var down = false, startX = 0, startScroll = 0, moved = false;
+            el.addEventListener('mousedown', function (e) {
+                down = true; moved = false;
+                startX = e.pageX; startScroll = el.scrollLeft;
+            });
+            window.addEventListener('mousemove', function (e) {
+                if (!down) return;
+                var dx = e.pageX - startX;
+                if (Math.abs(dx) > 5) { moved = true; el.classList.add('dragging'); }
+                el.scrollLeft = startScroll - dx;
+            });
+            window.addEventListener('mouseup', function () {
+                down = false;
+                setTimeout(function () { el.classList.remove('dragging'); }, 0);
+            });
+            el.addEventListener('click', function (e) { if (moved) { e.preventDefault(); } }, true);
+
+            // 좌우 이동 버튼
+            var prev = document.getElementById('topPrev'), next = document.getElementById('topNext');
+            function step() { return Math.round(el.clientWidth * 0.8); }
+            function update() {
+                if (!prev || !next) return;
+                prev.disabled = el.scrollLeft <= 2;
+                next.disabled = el.scrollLeft >= el.scrollWidth - el.clientWidth - 2;
+            }
+            if (prev) prev.addEventListener('click', function () { el.scrollBy({ left: -step(), behavior: 'smooth' }); });
+            if (next) next.addEventListener('click', function () { el.scrollBy({ left: step(), behavior: 'smooth' }); });
+            el.addEventListener('scroll', update);
+            window.addEventListener('resize', update);
+            update();
+        })();
+    </script>
+    <script src="js/category-menu.js"></script>
+</body>
+</html>
