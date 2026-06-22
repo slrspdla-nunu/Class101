@@ -255,8 +255,8 @@ nav .gnb li a {font-size: 18px; text-align: center; display: block; transition: 
 .hero_swiper .swiper-button-prev::after, .hero_swiper .swiper-button-next::after {display: none;}
 .hero_swiper .swiper-button-prev svg, .hero_swiper .swiper-button-next svg {width: 20px; height: 20px;}
 .mem_hero_inner {width: 1400px; height: 530px; margin: 0 auto; position: relative;}
-.mem_hero_inner h2 {position: absolute; left: 0; top: 120px; font-size: 40px; font-weight: 500; line-height: 48px; color: #fff;}
-.mem_hero_inner p {position: absolute; left: 0; top: 232px; font-size: 21px; font-weight: 300; line-height: 28px; color: #fff;}
+.mem_hero_inner h2 {position: absolute; left: 0; top: 120px; font-size: 40px; font-weight: 500; line-height: 48px; color: #161616;}
+.mem_hero_inner p {position: absolute; left: 0; top: 232px; font-size: 21px; font-weight: 300; line-height: 28px; color: #161616;}
 .mem_hero_inner .hero_btn {position: absolute; left: -5px; top: 326px; width: 283px; height: 69px; border-radius: 20px; background: linear-gradient(to right, #E5F800, #BEF800); display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 21px; font-weight: 500; color: #161616; transition: 0.3s;}
 .mem_hero_inner .hero_btn:hover {transform: scale(1.04);}
 .mem_hero_inner .hero_btn svg {width: 16px; height: 16px;}
@@ -320,7 +320,7 @@ nav .gnb li a {font-size: 18px; text-align: center; display: block; transition: 
 .mem_category .filter {display: flex; flex-wrap: wrap; gap: 16px 20px;}
 .mem_category .filter .chip {height: 50px; padding: 0 26px; border: 1px solid #C5C5C5; border-radius: 25px; font-size: 21px; font-weight: 400; color: #fff; display: flex; align-items: center; transition: 0.2s;}
 .mem_category .filter .chip:hover {border-color: #E5F800;}
-.mem_category .filter .chip.on {height: 52px; background: #EBFF00; color: #161616; border-color: transparent; font-weight: 500;}
+.mem_category .filter .chip.on {height: 50px; background: #EBFF00; color: #161616; border-color: transparent;}
 
 .mem_category .sort {position: relative; text-align: right; margin: 28px 0 20px 0; z-index: 20;}
 .mem_category .sort_btn {font-family: inherit; font-size: 21px; font-weight: 500; color: #fff; background: none; border: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; padding: 0;}
@@ -839,7 +839,15 @@ nav .gnb li a {font-size: 18px; text-align: center; display: block; transition: 
 .login_visual .lv_tail {font-size: 17px; font-weight: 500; color: #2b2b2b;}
 .login_panel {flex: 1; min-width: 0; padding: 64px 60px;}
 .login_panel h2 {font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 8px;}
-.login_panel .login_sub {font-size: 15px; color: #888; margin-bottom: 36px;}
+.login_panel .login_sub {font-size: 15px; color: #888; margin-bottom: 24px;}
+
+/* 체험용 테스트 계정 안내 */
+.login_test {background: #161616; border: 1px solid #E5F800; border-radius: 14px; padding: 16px 18px; margin-bottom: 28px;}
+.login_test .lt_tag {display: inline-block; font-size: 12px; font-weight: 700; color: #161616; background: linear-gradient(to right, #E5F800, #BEF800); padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;}
+.login_test .lt_info p {font-size: 14px; color: #ccc; margin-bottom: 14px;}
+.login_test .lt_info p b {color: #E5F800; font-weight: 600;}
+.login_test .lt_btn {width: 100%; height: 44px; background: none; border: 1px solid #E5F800; border-radius: 10px; color: #E5F800; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.2s;}
+.login_test .lt_btn:hover {background: #E5F800; color: #161616;}
 
 .login_form .field {margin-bottom: 18px;}
 .login_form .field label {display: block; font-size: 14px; color: #C5C5C5; margin-bottom: 8px;}
@@ -899,3 +907,18 @@ header.centerbox {position: relative; z-index: 200;}
 .cr_classes .class_body {padding: 20px 22px 24px 22px;}
 .cr_classes .class_title {font-size: 19px; font-weight: 500; color: #fff; line-height: 1.4; margin-bottom: 12px;}
 .cr_classes .class_level {font-size: 15px; color: #888;}
+
+/* ===== 클릭 가능 표시 (토글) ===== */
+.clickguide-btn {position: fixed; right: 24px; bottom: 24px; z-index: 9999; display: inline-flex; align-items: center; gap: 9px; padding: 13px 20px; border-radius: 999px; border: 1.5px solid #E5F800; background: #1f1f1f; color: #E5F800; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45); transition: 0.2s;}
+.clickguide-btn:hover {transform: translateY(-2px);}
+.clickguide-btn .cg-dot {width: 9px; height: 9px; border-radius: 50%; background: #FF2D2D;}
+body.show-clickdots .clickguide-btn {background: linear-gradient(to right, #E5F800, #BEF800); color: #161616; border-color: #BEF800;}
+body.show-clickdots .clickguide-btn .cg-dot {background: #161616;}
+
+.clickdot-mark {position: absolute; top: 8px; right: 8px; width: 14px; height: 14px; border-radius: 50%; background: #FF2D2D; border: 2px solid #fff; pointer-events: none; z-index: 600; box-shadow: 0 0 0 0 rgba(255, 45, 45, 0.7); animation: clickpulse 1.3s ease-out infinite;}
+body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
+@keyframes clickpulse {
+    0% {box-shadow: 0 0 0 0 rgba(255, 45, 45, 0.7);}
+    70% {box-shadow: 0 0 0 11px rgba(255, 45, 45, 0);}
+    100% {box-shadow: 0 0 0 0 rgba(255, 45, 45, 0);}
+}

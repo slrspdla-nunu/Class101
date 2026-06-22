@@ -56,23 +56,47 @@
             });
         });
 
+        // 실제 페이지로 연결되는 메뉴 항목에 네온 점 (메뉴가 열렸을 때만 보임)
+        function markCat(el) {
+            if (!el || el.querySelector(':scope > .clickdot-mark')) return;
+            if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+            var d = document.createElement('span');
+            d.className = 'clickdot-mark cat-dot';
+            el.appendChild(d);
+        }
+        panel.querySelectorAll('.cat-col').forEach(function (col) {
+            var hasLink = false;
+            col.querySelectorAll('.cat-subs a').forEach(function (a) {
+                var h = a.getAttribute('href');
+                if (h && h !== '#') { markCat(a); hasLink = true; }
+            });
+            if (hasLink) markCat(col.querySelector('.cat-head'));
+        });
+
+        function syncBody() {
+            document.body.classList.toggle('cat-open', panel.classList.contains('open'));
+        }
+
         trigger.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             panel.classList.toggle('open');
             trigger.classList.toggle('cat-active');
+            syncBody();
         });
 
         document.addEventListener('click', function (e) {
             if (!panel.contains(e.target) && e.target !== trigger) {
                 panel.classList.remove('open');
                 trigger.classList.remove('cat-active');
+                syncBody();
             }
         });
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 panel.classList.remove('open');
                 trigger.classList.remove('cat-active');
+                syncBody();
             }
         });
     }
@@ -102,4 +126,90 @@
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyAuth);
     else applyAuth();
+})();
+
+// 클릭 가능한 요소를 네온 점으로 표시 (토글)
+(function () {
+    // 항상 동작하는 컨트롤(메뉴·필터·정렬·캐러셀·더보기) → 무조건 표시
+    var ALWAYS = ['.gnb li a', '.sort_btn', '.cls_nav'];
+    // 조건부: 실제로 페이지 이동/동작이 있을 때만 표시
+    var CONDITIONAL = [
+        '.board', '.board2', '.mem_card', '.cls_card', '.rec_card',
+        '.post_card', '.class_card', '.my_membership',
+        '.hero_btn', '.subscribe_btn', '.plan_btn',
+        '.home_link', '.loginbox .login a', '.my_menu a',
+        '.creator_box .csns a', '.cr_btns a'
+    ];
+
+    function validHref(a) {
+        var h = a && a.getAttribute('href');
+        return !!h && h.trim() !== '' && h.trim() !== '#' && !/^javascript:/i.test(h);
+    }
+    function isActionable(el) {
+        if (el.tagName === 'BUTTON') return true;
+        if (el.hasAttribute('onclick')) return true;
+        if (el.tagName === 'A' && validHref(el)) return true;
+        var a = el.querySelector('a[href]');
+        return !!(a && validHref(a));
+    }
+    function placeDot(el) {
+        if (el.closest('.clickguide-btn')) return;
+        if (el.querySelector(':scope > .clickdot-mark')) return;
+        if (getComputedStyle(el).position === 'static') {
+            el.style.position = 'relative';
+            el.setAttribute('data-cd-pos', '1');
+        }
+        var d = document.createElement('span');
+        d.className = 'clickdot-mark';
+        if (el.closest('.cat-mega')) d.className += ' cat-dot';
+        el.appendChild(d);
+    }
+
+    function addDots() {
+        ALWAYS.forEach(function (sel) {
+            document.querySelectorAll(sel).forEach(placeDot);
+        });
+        CONDITIONAL.forEach(function (sel) {
+            document.querySelectorAll(sel).forEach(function (el) {
+                if (isActionable(el)) placeDot(el);
+            });
+        });
+    }
+
+    function removeDots() {
+        // 메뉴 점(.cat-dot)은 항상 유지, 토글로 켠 점만 제거
+        document.querySelectorAll('.clickdot-mark:not(.cat-dot)').forEach(function (d) { d.remove(); });
+        document.querySelectorAll('[data-cd-pos]').forEach(function (el) {
+            el.style.position = '';
+            el.removeAttribute('data-cd-pos');
+        });
+    }
+
+    function build() {
+        if (document.querySelector('.clickguide-btn')) return;
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'clickguide-btn';
+        btn.innerHTML = '<span class="cg-dot"></span><span class="cg-label">클릭 가능 표시</span>';
+        document.body.appendChild(btn);
+
+        var on = false;
+        try { on = localStorage.getItem('c101_clickdots') === '1'; } catch (e) {}
+
+        function apply() {
+            document.body.classList.toggle('show-clickdots', on);
+            btn.querySelector('.cg-label').textContent = on ? '표시 끄기' : '클릭 가능 표시';
+            if (on) addDots(); else removeDots();
+        }
+        apply(); // 저장된 상태를 페이지 로드 시 복원
+
+        btn.addEventListener('click', function () {
+            on = !on;
+            try { localStorage.setItem('c101_clickdots', on ? '1' : '0'); } catch (e) {}
+            apply();
+        });
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
+    else build();
 })();

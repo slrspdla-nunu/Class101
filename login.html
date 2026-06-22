@@ -54,6 +54,14 @@
             <h2>로그인</h2>
             <p class="login_sub">원하는 모든 것, 나답게 배우다</p>
 
+            <div class="login_test">
+                <div class="lt_info">
+                    <span class="lt_tag">체험용 테스트 계정</span>
+                    <p>이메일 <b>test@gmail.com</b> &nbsp;·&nbsp; 비밀번호 <b>test1234</b></p>
+                </div>
+                <button type="button" class="lt_btn" id="testLoginBtn">테스트 계정으로 바로 로그인 →</button>
+            </div>
+
             <form class="login_form" onsubmit="return false;">
                 <div class="field">
                     <label>이메일</label>
@@ -174,6 +182,15 @@
                     } else {
                         alert('이메일 또는 비밀번호가 올바르지 않습니다.\n(테스트 계정: test@gmail.com / test1234)');
                     }
+                });
+            }
+
+            // 테스트 계정으로 바로 로그인
+            var testBtn = document.getElementById('testLoginBtn');
+            if (testBtn) {
+                testBtn.addEventListener('click', function () {
+                    try { localStorage.setItem('c101_user', JSON.stringify({ email: 'test@gmail.com', nick: 'test' })); } catch (err) {}
+                    location.href = 'mypage.html';
                 });
             }
         })();
