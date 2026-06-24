@@ -213,3 +213,110 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
     else build();
 })();
+
+// 모바일에서 메인 히어로를 PC 구성 그대로 화면 폭에 맞춰 축소
+(function () {
+    var DESIGN_W = 1400, DESIGN_H = 1062, BP = 900;
+    function fitHero() {
+        var hero = document.getElementById('hero');
+        if (!hero) return;
+        var mobile = window.innerWidth <= BP;
+
+        // 서브텍스트는 스케일 밖으로 빼서 일반 모바일 텍스트 크기로 표시
+        var sub = document.querySelector('.subtext');
+        if (sub) {
+            if (mobile && sub.parentNode === hero) {
+                hero.parentNode.insertBefore(sub, hero);
+                sub.classList.add('subtext-out');
+            } else if (!mobile && sub.parentNode !== hero) {
+                hero.insertBefore(sub, hero.firstChild);
+                sub.classList.remove('subtext-out');
+            }
+        }
+
+        if (mobile) {
+            // body가 zoom:0.8 이므로 그만큼 보정해서 스케일 계산
+            var scale = window.innerWidth / (DESIGN_W * 0.8);
+            hero.style.width = DESIGN_W + 'px';
+            hero.style.height = DESIGN_H + 'px';
+            hero.style.transformOrigin = 'top left';
+            hero.style.transform = 'scale(' + scale + ')';
+            hero.style.marginBottom = (-(DESIGN_H * (1 - scale))) + 'px';
+            document.documentElement.style.overflowX = 'hidden';
+        } else {
+            hero.style.width = '';
+            hero.style.height = '';
+            hero.style.transform = '';
+            hero.style.transformOrigin = '';
+            hero.style.marginBottom = '';
+            document.documentElement.style.overflowX = '';
+        }
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fitHero);
+    else fitHero();
+    window.addEventListener('resize', fitHero);
+})();
+
+// 모바일 햄버거 메뉴 (상단 유틸 + 네비를 한 곳에)
+(function () {
+    function build() {
+        var header = document.querySelector('header.centerbox');
+        if (!header || header.querySelector('.hamburger')) return;
+
+        var ham = document.createElement('button');
+        ham.type = 'button';
+        ham.className = 'hamburger';
+        ham.setAttribute('aria-label', '메뉴');
+        ham.innerHTML = '<span></span><span></span><span></span>';
+        header.appendChild(ham);
+
+        var menu = document.createElement('div');
+        menu.className = 'mobile-menu';
+        var html = '<div class="mm-label">메뉴</div>';
+        header.querySelectorAll('nav .gnb li a').forEach(function (a) {
+            html += '<a href="' + (a.getAttribute('href') || '#') + '" data-mm="' + a.textContent.trim() + '">' + a.textContent.trim() + '</a>';
+        });
+        html += '<div class="mm-div"></div><div class="mm-label">계정</div>';
+        var lang = header.querySelector('.language a');
+        if (lang) html += '<a href="' + (lang.getAttribute('href') || '#') + '">Language</a>';
+        header.querySelectorAll('.loginbox .login a').forEach(function (a) {
+            html += '<a href="' + (a.getAttribute('href') || '#') + '" data-mm="' + a.textContent.trim() + '">' + a.textContent.trim() + '</a>';
+        });
+        menu.innerHTML = html;
+        header.appendChild(menu);
+
+        function close() { ham.classList.remove('on'); menu.classList.remove('open'); }
+
+        ham.addEventListener('click', function (e) {
+            e.stopPropagation();
+            ham.classList.toggle('on');
+            menu.classList.toggle('open');
+        });
+
+        // 카테고리 → 메가메뉴 열기
+        menu.querySelectorAll('a[data-mm="카테고리"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                close();
+                var trig = null;
+                header.querySelectorAll('.gnb li a').forEach(function (x) { if (x.textContent.trim() === '카테고리') trig = x; });
+                if (trig) trig.click();
+            });
+        });
+
+        // 로그아웃 동작 유지
+        menu.querySelectorAll('a[data-mm="로그아웃"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                try { localStorage.removeItem('c101_user'); } catch (err) {}
+                location.href = 'index.html';
+            });
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!menu.contains(e.target) && !ham.contains(e.target)) close();
+        });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
+    else build();
+})();
