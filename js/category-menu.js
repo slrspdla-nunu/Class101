@@ -217,10 +217,15 @@
 // 모바일에서 메인 히어로를 PC 구성 그대로 화면 폭에 맞춰 축소
 (function () {
     var DESIGN_W = 1400, DESIGN_H = 1062, BP = 900;
+    function getW() {
+        // 모바일 초기 로드 시 innerWidth가 잘못 잡히는 문제 대응 → 레이아웃 뷰포트 폭 사용
+        return document.documentElement.clientWidth || window.innerWidth;
+    }
     function fitHero() {
         var hero = document.getElementById('hero');
         if (!hero) return;
-        var mobile = window.innerWidth <= BP;
+        var w = getW();
+        var mobile = w <= BP;
 
         // 서브텍스트는 스케일 밖으로 빼서 일반 모바일 텍스트 크기로 표시
         var sub = document.querySelector('.subtext');
@@ -236,7 +241,7 @@
 
         if (mobile) {
             // 모바일은 zoom:1 이므로 화면폭/디자인폭으로 스케일 계산
-            var scale = window.innerWidth / DESIGN_W;
+            var scale = w / DESIGN_W;
             hero.style.width = DESIGN_W + 'px';
             hero.style.height = DESIGN_H + 'px';
             hero.style.transformOrigin = 'top left';
@@ -254,7 +259,12 @@
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fitHero);
     else fitHero();
+    // 모바일에서 뷰포트 폭이 늦게 확정되는 경우까지 커버
+    window.addEventListener('load', fitHero);
     window.addEventListener('resize', fitHero);
+    window.addEventListener('orientationchange', fitHero);
+    setTimeout(fitHero, 100);
+    setTimeout(fitHero, 400);
 })();
 
 // 모바일 햄버거 메뉴 (상단 유틸 + 네비를 한 곳에)
