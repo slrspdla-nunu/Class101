@@ -282,9 +282,26 @@
 
         var menu = document.createElement('div');
         menu.className = 'mobile-menu';
+        var chev = '<svg viewBox="0 0 24 24"><path d="M6 9L12 15L18 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
         var html = '<div class="mm-label">메뉴</div>';
         header.querySelectorAll('nav .gnb li a').forEach(function (a) {
-            html += '<a href="' + (a.getAttribute('href') || '#') + '" data-mm="' + a.textContent.trim() + '">' + a.textContent.trim() + '</a>';
+            var label = a.textContent.trim();
+            if (label === '카테고리') {
+                // 카테고리: 햄버거 안에서 2단 아코디언으로 펼침 (메가메뉴 데이터 재사용)
+                html += '<div class="mm-cat"><button type="button" class="mm-cat-top">카테고리<span class="mm-chev">' + chev + '</span></button><div class="mm-cat-body">';
+                header.querySelectorAll('.cat-mega .cat-col').forEach(function (col) {
+                    var head = col.querySelector('.cat-head');
+                    var name = head ? head.textContent.trim() : '';
+                    html += '<div class="mm-c1"><button type="button" class="mm-c1-top">' + name + '<span class="mm-chev">' + chev + '</span></button><ul class="mm-c2">';
+                    col.querySelectorAll('.cat-subs a').forEach(function (sa) {
+                        html += '<li><a href="' + (sa.getAttribute('href') || '#') + '">' + sa.textContent.trim() + '</a></li>';
+                    });
+                    html += '</ul></div>';
+                });
+                html += '</div></div>';
+            } else {
+                html += '<a href="' + (a.getAttribute('href') || '#') + '" data-mm="' + label + '">' + label + '</a>';
+            }
         });
         html += '<div class="mm-div"></div><div class="mm-label">계정</div>';
         var lang = header.querySelector('.language a');
@@ -303,14 +320,16 @@
             menu.classList.toggle('open');
         });
 
-        // 카테고리 → 메가메뉴 열기
-        menu.querySelectorAll('a[data-mm="카테고리"]').forEach(function (a) {
-            a.addEventListener('click', function (e) {
-                e.preventDefault();
-                close();
-                var trig = null;
-                header.querySelectorAll('.gnb li a').forEach(function (x) { if (x.textContent.trim() === '카테고리') trig = x; });
-                if (trig) trig.click();
+        // 카테고리 아코디언 토글 (메뉴는 닫히지 않음)
+        var catTop = menu.querySelector('.mm-cat-top');
+        if (catTop) catTop.addEventListener('click', function (e) {
+            e.stopPropagation();
+            catTop.parentNode.classList.toggle('open');
+        });
+        menu.querySelectorAll('.mm-c1-top').forEach(function (b) {
+            b.addEventListener('click', function (e) {
+                e.stopPropagation();
+                b.parentNode.classList.toggle('open');
             });
         });
 
@@ -326,6 +345,42 @@
         document.addEventListener('click', function (e) {
             if (!menu.contains(e.target) && !ham.contains(e.target)) close();
         });
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
+    else build();
+})();
+
+// 콘텐츠 미리보기 이미지 클릭 → 원본 라이트박스 팝업
+(function () {
+    function build() {
+        var imgs = document.querySelectorAll('.preview_grid img');
+        if (!imgs.length) return;
+
+        var box = document.createElement('div');
+        box.className = 'lightbox';
+        box.innerHTML = '<button type="button" class="lightbox-close" aria-label="닫기">&times;</button><img alt="원본 이미지">';
+        document.body.appendChild(box);
+        var bimg = box.querySelector('img');
+
+        function open(src) {
+            bimg.src = src;
+            box.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function close() {
+            box.classList.remove('open');
+            document.body.style.overflow = '';
+            setTimeout(function () { bimg.src = ''; }, 200);
+        }
+
+        imgs.forEach(function (im) {
+            im.style.cursor = 'zoom-in';
+            im.addEventListener('click', function () { open(im.currentSrc || im.src); });
+        });
+
+        box.addEventListener('click', function () { close(); });
+        box.querySelector('.lightbox-close').addEventListener('click', function (e) { e.stopPropagation(); close(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && box.classList.contains('open')) close(); });
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
     else build();
