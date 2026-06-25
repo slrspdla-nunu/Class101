@@ -334,7 +334,7 @@ nav .gnb li a {font-size: 18px; text-align: center; display: block; transition: 
 
 .mem_card_list.grid3 {row-gap: 32px;}
 
-.mem_category .more_btn {width: 352px; height: 69px; margin: 61px auto 0 auto; border-radius: 20px; background: linear-gradient(to right, #E5F800, #BEF800); display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 21px; font-weight: 500; color: #161616; transition: 0.3s;}
+.mem_category .more_btn {width: 352px; height: 69px; margin: 61px auto 0 auto; border-radius: 20px; background: linear-gradient(to right, #E5F800, #BEF800); display: flex; align-items: center; justify-content: center; gap: 12px; font-family: inherit; font-size: 21px; font-weight: 500; color: #161616; transition: 0.3s;}
 .mem_category .more_btn svg {width: 21px; height: 13px;}
 .mem_category .more_btn:hover {transform: scale(1.03);}
 
@@ -968,6 +968,8 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
 
 /* ---------- 모바일 (≤900px): 2단 레이아웃 → 세로 정렬 ---------- */
 @media (max-width: 900px) {
+    body {zoom: 1;}
+
     .detail_inner, .comm_layout, .postd_layout, .my_layout, .pay_layout, .cr_hero_inner {
         flex-direction: column;
         gap: 32px;
@@ -1008,7 +1010,7 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
 /* ---------- 소형 모바일 (≤600px) ---------- */
 @media (max-width: 600px) {
     header .topset .language {margin-top: 16px;}
-    header .topset .loginbox .login {margin-top: 16px; font-size: 13px;}
+    header .topset .loginbox .login {margin-top: 16px; font-size: 14px;}
     header .topset .loginbox .login a {padding: 0 9px;}
     nav .gnb {padding: 12px 0 10px 0;}
     nav .gnb li a {font-size: 15px; padding: 14px 0;}
@@ -1025,27 +1027,48 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     .detail_left .feat_list .fimg {width: 100%; height: 180px;}
     .detail_left .feat_list .ftext {padding: 0 20px 20px;}
 
-    .cls_search_wrap h2 {font-size: 26px;}
+    .cls_search_wrap h2 {font-size: 23px;}
     .cls_section .cls_title, .mem_title, .mem_title2,
-    #section01 .category, #section02 .category, .pay_title {font-size: 26px;}
+    #section01 .category, #section02 .category, .pay_title {font-size: 23px;}
     #section01 .category {margin: 30px 0 40px 0;}
-    .detail_cover .profile_text h2 {font-size: 26px;}
+    .detail_cover .profile_text h2 {font-size: 23px;}
     .detail_cover {height: 320px;}
     .detail_cover .cover_inner {padding-bottom: 30px;}
 
     .mem_hero, .hero_swiper, .hero_swiper .swiper-slide {height: 340px;}
     .mem_hero_inner h2 {font-size: 24px; line-height: 1.3;}
 
+    #hero {margin-top: 15px;}
+    .line img {transform: translateY(-85px);}
+
     .cls_row .cls_card {flex: 0 0 240px; width: 240px;}
 
-    .cls_searchbar {flex-wrap: wrap; border-radius: 18px; padding: 12px;}
-    .cls_searchbar button {height: 44px;}
+    .mbr {display: inline;}
+    .cls_searchbar {flex-wrap: nowrap; border-radius: 999px; padding: 4px 4px 4px 16px;}
+    .cls_searchbar svg {width: 18px; height: 18px;}
+    .cls_searchbar input {font-size: 14px; padding: 0 10px;}
+    .cls_searchbar button {height: 40px; padding: 0 16px; font-size: 14px; flex-shrink: 0;}
 
-    #footer .container .textbox_top {flex-direction: column; gap: 36px; margin-top: 60px;}
-    #footer .container .textbox_top .text_right {gap: 28px;}
+    #footer .container .textbox_top {flex-direction: column; gap: 40px; margin-top: 50px;}
+    #footer .container .textbox_top .text_left .box h3 {font-size: 18px;}
+    #footer .container .textbox_top .text_left .box span {font-size: 15px; margin: 8px 0 15px 0;}
+    #footer .container .textbox_top .text_left a.botton {font-size: 14px; padding: 9px 24px; display: inline-block; margin-bottom: 20px;}
+    #footer .container .textbox_top .text_left .icons {margin-top: 0;}
+    #footer .container .textbox_top .text_left .down {gap: 10px; flex-wrap: wrap;}
+    #footer .container .textbox_top .text_left .down a img {height: 40px; width: auto;}
+    #footer .container .textbox_top .text_left .sns_icon a img {height: 26px; width: auto;}
+    #footer .container .textbox_top .text_right {display: block; column-count: 2; column-gap: 16px;}
+    #footer .container .textbox_top .text_right .box {gap: 12px; break-inside: avoid; margin-bottom: 24px;}
+    #footer .container .textbox_top .text_right .box a {font-size: 14px; word-break: keep-all;}
+    #footer .container {padding-bottom: 40px;}
+    #footer .container .textbox_bottom {height: auto; margin-top: 36px; font-size: 12px; gap: 12px;}
+    #footer .container .textbox_bottom .info1, #footer .container .textbox_bottom .info2 {flex-wrap: wrap; gap: 4px 10px;}
 
-    .clickguide-btn {right: 14px; bottom: 14px; padding: 10px 14px; font-size: 13px;}
+    .clickguide-btn {right: 14px; bottom: 14px; padding: 10px 14px; font-size: 14px;}
 }
+
+/* 모바일 전용 줄바꿈 (데스크톱에선 숨김) */
+.mbr {display: none;}
 
 /* 모바일에서 히어로 밖으로 빠진 서브텍스트 */
 .subtext-out {display: block; text-align: center; font-size: 19px; font-weight: 500; color: #E5F800; padding: 24px 16px 4px; margin: 0;}
@@ -1059,7 +1082,7 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     header .topset {display: none;}
     header nav {display: none;}
     header h1 {text-align: center; padding: 16px 0;}
-    header h1 img {height: 22px; width: auto;}
+    header h1 img {height: 15px; width: auto;}
 
     .hamburger {
         display: flex; flex-direction: column; justify-content: center; gap: 5px;
@@ -1080,5 +1103,120 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     .mobile-menu a {padding: 15px 24px; color: #fff; font-size: 16px; border-bottom: 1px solid #262626; transition: 0.15s;}
     .mobile-menu a:hover {background: #262626; color: #E5F800;}
     .mobile-menu .mm-div {height: 8px; background: #161616; border-bottom: 1px solid #262626;}
-    .mobile-menu .mm-label {padding: 14px 24px 4px; font-size: 12px; color: #888; letter-spacing: 0.5px;}
+    .mobile-menu .mm-label {padding: 14px 24px 4px; font-size: 14px; color: #888; letter-spacing: 0.5px;}
+}
+
+/* ---------- 모바일 섹션1 추천 클래스 카드 축소 (≤768px) ---------- */
+@media (max-width: 768px) {
+    #section01 .container {gap: 18px;}
+    #section01 .container .board, #section01 .container .board2 {padding: 18px;}
+
+    #section01 .container .board .title {font-size: 18px; margin-bottom: 12px;}
+    #section01 .container .board2 .title2 {font-size: 18px; margin: 12px 0 12px 0;}
+    #section01 .container .board .text, #section01 .container .board2 .text2 {font-size: 15px;}
+
+    #section01 .container .board .card-info .author,
+    #section01 .container .board2 .card-info2 .author {font-size: 14px; margin-bottom: 14px;}
+
+    #section01 .container .board .status .rating,
+    #section01 .container .board .status .rating2,
+    #section01 .container .board2 .status2 .rating3,
+    #section01 .container .board2 .status2 .rating4 {font-size: 14px;}
+    #section01 .container .board .status .rating {margin-bottom: 14px;}
+    #section01 .container .board .status .rating2 {margin: 0 0 14px 16px;}
+    #section01 .container .board2 .status2 .rating4 {margin: 0 0 0 16px;}
+    #section01 .container .board .status .rating img,
+    #section01 .container .board2 .status2 .rating3 img {width: 14px; height: auto;}
+
+    #section01 .container .board .arrow-icon img,
+    #section01 .container .board2 .arrow-icon2 img {width: 38px; height: 38px;}
+
+    #section01 .botton {width: 190px; height: 46px; font-size: 15px; gap: 8px; border-radius: 13px; margin-top: 50px;}
+    #section01 .botton .arrow_img {width: 10px; height: auto;}
+
+    /* 클래스 페이지 '클래스 더보기' 버튼 - 메인 버튼과 동일 사이즈 */
+    .mem_category .more_btn {width: 190px; height: 46px; font-size: 15px; gap: 8px; border-radius: 13px; margin: 50px auto 0 auto;}
+    .mem_category .more_btn svg {width: 13px; height: 8px;}
+
+    #section02 {margin-top: 50px;}
+    #section02 .section_box {padding-top: 50px; padding-bottom: 50px;}
+
+    /* 클래스 페이지 섹션 상하 여백 - 메인과 동일 (50px) */
+    .cls_popular, .cls_bycat {padding-top: 50px; padding-bottom: 50px;}
+
+    #section02 .category {margin-bottom: 40px;}
+    #section02 .content {row-gap: 10px;}
+    #section02 .botton {width: 190px; height: 46px; font-size: 15px; gap: 8px; border-radius: 13px; margin-top: 50px;}
+    #section02 .botton img {width: 10px; height: auto;}
+
+    /* 섹션2 카드 정리: 가로 배치 유지 + 압축 + 한글 단어 단위 줄바꿈 */
+    #section02 .content li {height: auto; padding: 16px 25px;}
+    #section02 .content li a {gap: 25px;}
+    #section02 .content li a .category_img {width: 64px;}
+    #section02 .content li a .text {min-width: 0;}
+    #section02 .content li a .text h3,
+    #section02 .content li a .text h3 span {font-size: 16px; word-break: keep-all;}
+    #section02 .content li a .text h3 {margin-bottom: 6px; line-height: 1.3;}
+    #section02 .content li a .text p {font-size: 13px; line-height: 1.45; word-break: keep-all;}
+
+    /* 섹션3 배너: 모바일 세로 재배치 */
+    #section03 .content {flex-direction: column; height: auto; gap: 16px; padding: 40px 16px; justify-content: center;}
+    #section03 .content li {width: 100%; height: auto; padding: 18px; flex-direction: row; align-items: center; gap: 14px; flex-grow: 0;}
+    #section03 .content li figure, #section03 .content li span {position: static; margin: 0; left: auto; right: auto; flex-shrink: 0;}
+    #section03 .content li figure img, #section03 .content li span img {width: 76px; height: auto;}
+    #section03 .content .textbox {position: static; margin: 0; flex: 1; min-width: 0; align-items: flex-start;}
+    #section03 .content .textbox p {font-size: 13px; word-break: keep-all;}
+    #section03 .content .textbox strong {font-size: 17px; margin-bottom: 8px; line-height: 1.3; word-break: keep-all;}
+    #section03 .content .textbox .btn1 {font-size: 13px; padding: 8px 14px; gap: 8px; white-space: nowrap;}
+    #section03 .content .stars {display: none;}
+
+    /* 섹션4 카테고리 제목 */
+    #section04 .section_box .category {padding-top: 50px;}
+    #section04 .section_box .category span {font-size: 23px; margin-bottom: 40px;}
+
+    /* 섹션4 카드: 2열 그리드 + 라벨 상시 표시 + 하단 오버레이 */
+    #section04 .section_box .content {grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; gap: 14px;}
+    #section04 .section_box .content li a::before {opacity: 1; background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.12) 55%, transparent 100%);}
+    #section04 .section_box .content li .textbox {position: absolute; left: 0; right: 0; bottom: 0; opacity: 1; padding: 12px 14px;}
+    #section04 .section_box .content li .textbox p {font-size: 13px; line-height: 1.35; word-break: keep-all;}
+    #section04 .section_box .content li .textbox p br {display: none;}
+    #section04 .section_box .content li .num {top: 10px; left: 14px; right: auto; bottom: auto; font-size: 26px;}
+}
+
+/* ---------- 클래스/카테고리 페이지 모바일 1차 (≤600px) ---------- */
+@media (max-width: 600px) {
+    .cls_search_wrap {padding: 40px 0 32px;}
+    .cls_search_wrap p {font-size: 14px; margin-bottom: 22px;}
+    .cls_keywords {gap: 8px; margin-top: 16px;}
+    .cls_keywords span {font-size: 13px;}
+    .cls_keywords a {font-size: 14px; padding: 6px 12px;}
+
+    .cls_section .cls_desc {font-size: 14px; margin-bottom: 22px;}
+
+    /* 카테고리 필터 칩 + 정렬 (모바일 폰트 규칙) */
+    .mem_category .filter {gap: 10px;}
+    .mem_category .filter .chip {height: 36px; padding: 0 15px; font-size: 14px; border-radius: 18px;}
+    .mem_category .filter .chip.on {height: 36px;}
+    .mem_category .sort {margin: 20px 0 16px 0;}
+    .mem_category .sort_btn {font-size: 14px; gap: 5px;}
+    .mem_category .sort_btn .caret {font-size: 11px;}
+    .mem_category .sort_menu {width: 150px;}
+    .mem_category .sort_menu li {font-size: 14px; padding: 10px 16px;}
+
+    /* 카드 그리드 2열 + 내부 축소 */
+    .cls_grid {grid-template-columns: 1fr 1fr; gap: 14px;}
+    .cls_card {border-radius: 14px; border-width: 1.5px;}
+    .cls_card .rank {height: 24px; font-size: 11px; padding: 0 8px; left: 8px; top: 8px;}
+    .cls_card .card_body {padding: 12px;}
+    .cls_card .card_head {gap: 6px;}
+    .cls_card .card_text h3 {font-size: 14px; margin-bottom: 6px; line-height: 1.35;}
+    .cls_card .card_text p {font-size: 12px;}
+    .cls_card .card_arrow {display: none;}
+    .cls_card .card_foot {padding-top: 12px; gap: 6px;}
+    .cls_card .card_foot .rate {font-size: 12px;}
+    .cls_card .card_foot .rate svg {width: 12px; height: 12px;}
+    .cls_card .card_foot .tag {display: none;}
+
+    /* TOP10 가로 캐러셀 카드 */
+    .cls_row .cls_card {flex: 0 0 200px; width: 200px;}
 }

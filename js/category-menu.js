@@ -235,8 +235,8 @@
         }
 
         if (mobile) {
-            // body가 zoom:0.8 이므로 그만큼 보정해서 스케일 계산
-            var scale = window.innerWidth / (DESIGN_W * 0.8);
+            // 모바일은 zoom:1 이므로 화면폭/디자인폭으로 스케일 계산
+            var scale = window.innerWidth / DESIGN_W;
             hero.style.width = DESIGN_W + 'px';
             hero.style.height = DESIGN_H + 'px';
             hero.style.transformOrigin = 'top left';
