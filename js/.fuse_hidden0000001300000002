@@ -191,7 +191,6 @@
         btn.type = 'button';
         btn.className = 'clickguide-btn';
         btn.innerHTML = '<span class="cg-dot"></span><span class="cg-label">클릭 가능 표시</span>';
-        btn.setAttribute('aria-label', '클릭 가능 표시');
         document.body.appendChild(btn);
 
         var on = false;
@@ -217,7 +216,7 @@
 
 // 모바일에서 메인 히어로를 PC 구성 그대로 화면 폭에 맞춰 축소
 (function () {
-    var DESIGN_W = 1400, DESIGN_H = 1062, BP = 1024;
+    var DESIGN_W = 1400, DESIGN_H = 1062, BP = 900;
     function getW() {
         // 모바일 초기 로드 시 innerWidth가 잘못 잡히는 문제 대응 → 레이아웃 뷰포트 폭 사용
         return document.documentElement.clientWidth || window.innerWidth;
@@ -248,14 +247,14 @@
             hero.style.transformOrigin = 'top left';
             hero.style.transform = 'scale(' + scale + ')';
             hero.style.marginBottom = (-(DESIGN_H * (1 - scale))) + 'px';
-
+            document.body.style.overflowX = 'hidden';
         } else {
             hero.style.width = '';
             hero.style.height = '';
             hero.style.transform = '';
             hero.style.transformOrigin = '';
             hero.style.marginBottom = '';
-
+            document.body.style.overflowX = '';
         }
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fitHero);
@@ -385,23 +384,4 @@
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
     else build();
-})();
-
-// 섹션2: 모바일에서 '더 알아보기'로 펼치고 '접기'로 다시 접기
-(function () {
-    var wrap = document.querySelector('#section02 .content-wrapper');
-    if (!wrap) return;
-    var expandBtn = wrap.querySelector('.botton:not(.botton--collapse)');
-    var collapseBtn = wrap.querySelector('.botton--collapse');
-    if (!wrap.classList.contains('is-collapsed')) wrap.classList.add('is-collapsed');
-    if (expandBtn) expandBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        wrap.classList.remove('is-collapsed');
-    });
-    if (collapseBtn) collapseBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        wrap.classList.add('is-collapsed');
-        var sec = document.getElementById('section02');
-        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
 })();

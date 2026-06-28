@@ -38,35 +38,53 @@ nav .gnb li a {font-size: 18px; text-align: center; display: block; transition: 
 
 
 #hero {width: 100%; height: 1062px; margin: 0 auto;  text-align: center; position: relative;}
+.hero-clip {overflow-x: clip;}
 #hero .subtext {font-size: 24px; color:#E5F800; margin: 22px 0 3px 0;}
 .star {z-index: 10;}
 .star .star1 {position: absolute; right: 50%; margin: -50px -720px 0 0;}
 .star .star2 {position: absolute; left: 50%; margin: 350px 0 0 -780px;}
 .star .star3 {position: absolute; right: 50%; margin: 640px -800px 0 0;}
+.star img {display: block; transform-origin: center; will-change: transform;}
+.star .star1 img {animation: starSpin 9s linear infinite;}
+.star .star2 img {animation: starSpin 7s linear infinite reverse;}
+.star .star3 img {animation: starSpin 11s linear infinite;}
+@keyframes starSpin {to {transform: rotate(360deg);}}
+@media (prefers-reduced-motion: reduce) {.star img {animation: none;}}
 
 
 .maintext {z-index: 30; position: relative}
 .main {position: absolute; left: 50%; top: 63%; z-index: 40; transform: translate(-50%, -50%);}
-.line {position: absolute; bottom: -9%; z-index: 99; width: 100%; line-height: 0;}
-.line img {width: 100%; height: auto; display: block;}
+.line {position: absolute; left: 0; bottom: -9%; width: 100%; height: 230px; z-index: 99; overflow-x: clip; pointer-events: none; line-height: 1;}
+.line--behind {z-index: 5;}
+.line_ribbon {position: absolute; left: -6%; width: 112%; height: 60px; overflow: hidden; display: flex; align-items: center; transform: rotate(-4deg);}
+.line_ribbon--front {top: -62px; height: 103px; z-index: 2; background: linear-gradient(90deg, #E5F800, #BEF800); transform: rotate(2.25deg);}
+.line_ribbon--back {top: -60px; height: 103px; z-index: 1; opacity: 0.5; background: linear-gradient(90deg, #C7D60C, #A6C200); transform: rotate(-6deg);}
+.lr_track {display: flex; flex: none; width: max-content; will-change: transform; animation: lineMarquee 44s linear infinite;}
+.line_ribbon--back .lr_track {animation-direction: reverse;}
+.lr_seq {display: inline-flex; flex: none; align-items: center; white-space: nowrap; font-family: 'Paperozi', sans-serif; font-weight: 600; font-size: 20px; letter-spacing: 0; text-transform: uppercase; color: #161616;}
+.lr_seq i {font-style: normal; font-size: 13px; margin: 0 50px; transform: translateY(-2px);}
+.line_ribbon--front .lr_seq {font-family: 'Paperozi', sans-serif; font-weight: 600; font-size: 20px; letter-spacing: 0;}
+.line_ribbon--front .lr_seq i {margin: 0 50px;}
+@keyframes lineMarquee {from {transform: translateX(0);} to {transform: translateX(-50%);}}
+@media (prefers-reduced-motion: reduce) {.lr_track {animation: none;}}
 
 
 
 #section_box {width: 100%;}
-#section01 {width: 1400px; height: 990px; overflow: hidden; margin: 0 auto;}
+#section01 {width: 1400px; height: auto; overflow: hidden; margin: 0 auto; padding-bottom: 130px;}
 
 #section01 .category {font-size: 38px; font-weight: 600; color: #fff; display: block; text-align: center; margin: 57px 0 90px 0;}
 #section_box #section01 .category p { display: inline-block; background: linear-gradient(to right, #E5F800, #C0F800); -webkit-background-clip: text; color: transparent;}
 
 
-#section01 .container {display: flex; gap: 30px;}
+#section01 .container {display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; align-items: stretch;}
 #section01 .botton {width: 294px; height: 69px; background: #343434; margin: 0 auto; display: block; display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 21px; font-weight: 300; border-radius: 20px; margin-top: 40px; transition: 0.3s;}
 #section01 .botton:hover {transform: scale(1.04); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15); border: 2px solid #777; }
 #section01 .botton:hover .arrow_img {animation: slideright 0.7s ease-in-out infinite; display: inline-block;}
 
 
 
-#section01 .container .board {width: 447px; border: 2px solid #E5F800; background: #252525; border-radius: 20px; display: flex; flex-direction: column; padding: 31px; transition: 0.3s;}
+#section01 .container .board {width: auto; border: 2px solid #E5F800; background: #252525; border-radius: 20px; display: flex; flex-direction: column; padding: 31px; transition: 0.3s;}
 #section01 .container .board:hover {transform: translateY(-5px); box-shadow: 0 8px 30px rgba(229, 248, 0, 0.18);}
 #section01 .container .board:hover .text {color: #E5F800;}
 #section01 .container .board .board_top {display: flex; justify-content: space-between; align-items: flex-start;}
@@ -104,7 +122,7 @@ nav .gnb li a {font-size: 18px; text-align: center; display: block; transition: 
 #section01 .container .board2:hover .card_thumb img {transform: scale(1.05);}
 
 
-#section01 .container .board2 {width: 446px; background: linear-gradient(#E5F800, #C0F800); border-radius: 20px; padding: 31px; transition: 0.3s;}
+#section01 .container .board2 {width: auto; background: linear-gradient(#E5F800, #C0F800); border-radius: 20px; padding: 31px; transition: 0.3s;}
 #section01 .container .board2:hover {transform: translateY(-5px); box-shadow: 0 8px 30px rgba(229, 248, 0, 0.25);}
 #section01 .container .board2 .board_top2 {display: flex; justify-content: space-between; align-items: flex-start;}
 #section01 .container .board2 .top_text_box2 {}
@@ -148,6 +166,8 @@ nav .gnb li a {font-size: 18px; text-align: center; display: block; transition: 
 #section02 .content li a .text p {font-size: 18px; font-weight: 300;}
 
 #section02 .botton {width: 294px; height: 69px; background: linear-gradient(to right, #E5F800, #C0F800); margin: 0 auto; display: block; display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 21px; font-weight: 400; border-radius: 20px; margin-top: 40px; color: #161616;}
+#section02 .botton--collapse {display: none;}
+#section02 .botton--collapse img {transform: rotate(180deg);}
 
 
 
@@ -664,7 +684,8 @@ nav .gnb li a {font-size: 18px; text-align: center; display: block; transition: 
 .my_classes .cls .ct {height: 150px; background: #8E8E8E; overflow: hidden;}
 .my_classes .cls .ct img {width: 100%; height: 100%; object-fit: cover; display: block;}
 .my_classes .cls .cb {padding: 16px 18px 20px 18px;}
-.my_classes .cls .cn {font-size: 16px; font-weight: 500; color: #fff; line-height: 1.4; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+.my_classes .cls .cn {font-size: 16px; font-weight: 500; color: #fff; line-height: 1.4; margin-bottom: 12px; word-break: keep-all; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+.my_classes .cls .cn .cnbr {display: none;}
 .my_classes .cls .cg {height: 6px; background: #333; border-radius: 4px; overflow: hidden; margin-bottom: 8px;}
 .my_classes .cls .cg span {display: block; height: 100%; background: linear-gradient(to right, #E5F800, #BEF800);}
 .my_classes .cls .cp {font-size: 13px; color: #888;}
@@ -952,8 +973,8 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     }
 
     #section01 {height: auto; overflow: visible;}
-    #section01 .container {flex-wrap: wrap; gap: 24px;}
-    #section01 .container .board, #section01 .container .board2 {width: calc(50% - 12px);}
+    #section01 .container {gap: 24px;}
+    #section01 .container .board, #section01 .container .board2 {width: auto;}
 
     #section04 .section_box {height: auto; padding-top: 0; padding-bottom: 60px;}
     #section04 .section_box .content {grid-template-columns: 1fr 1fr; grid-auto-rows: 240px; grid-template-rows: none;}
@@ -968,11 +989,25 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     .cls_grid, .detail_left .rec_grid, .post_grid, .my_classes,
     .cr_classes .class_grid {grid-template-columns: repeat(3, 1fr);}
 
-    #section02 .content li {width: calc((100% - 40px) / 2);}
+    #section02 .content {column-gap: 24px; row-gap: 24px;}
+    #section02 .content li {width: calc((100% - 24px) / 2);}
 
     #footer .container {height: auto; overflow: visible;}
     #footer .container .textbox_top {height: auto;}
     #footer .container .textbox_top .text_right {gap: 36px; flex-wrap: wrap;}
+
+    /* 섹션3 배너: 태블릿에서도 카드형으로 재배치 (절대배치 stars 오버플로우 방지) */
+    #section03 .content {flex-direction: column; height: auto; gap: 16px; padding: 48px 24px; justify-content: center;}
+    #section03 .content li {width: 100%; height: auto; padding: 28px; flex-direction: row; align-items: center; gap: 24px; flex-grow: 0;}
+    #section03 .content li figure, #section03 .content li span {position: static; margin: 0; left: auto; right: auto; flex-shrink: 0;}
+    #section03 .content li figure img, #section03 .content li span img {width: 110px; height: auto;}
+    #section03 .content .textbox {position: static; margin: 0; flex: 1; min-width: 0; align-items: flex-start;}
+    #section03 .content .stars {display: none;}
+}
+
+/* ---------- 태블릿 (≤1024px): 줌 1로 전환 (히어로 스케일과 정합) ---------- */
+@media (max-width: 1024px) {
+    body {zoom: 1;}
 }
 
 /* ---------- 모바일 (≤900px): 2단 레이아웃 → 세로 정렬 ---------- */
@@ -994,7 +1029,8 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     .cr_classes .class_grid, .mem_card_list {grid-template-columns: repeat(2, 1fr);}
     .my_stats {grid-template-columns: repeat(3, 1fr);}
 
-    #section01 .container .board, #section01 .container .board2 {width: 100%;}
+    #section01 .container {grid-template-columns: 1fr;}
+    #section01 .container .board, #section01 .container .board2 {width: auto;}
     #section01 {height: auto;}
 
     .mem_hero, .hero_swiper, .hero_swiper .swiper-slide {height: 420px;}
@@ -1048,7 +1084,6 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     .mem_hero_inner h2 {font-size: 24px; line-height: 1.3;}
 
     #hero {margin-top: 15px;}
-    .line img {transform: translateY(-85px);}
 
     .cls_row .cls_card {flex: 0 0 240px; width: 240px;}
 
@@ -1073,7 +1108,7 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     #footer .container .textbox_bottom {height: auto; margin-top: 36px; font-size: 12px; gap: 12px;}
     #footer .container .textbox_bottom .info1, #footer .container .textbox_bottom .info2 {flex-wrap: wrap; gap: 4px 10px;}
 
-    .clickguide-btn {right: 14px; bottom: 14px; padding: 10px 14px; font-size: 14px;}
+    .clickguide-btn {right: 14px; bottom: calc(16px + env(safe-area-inset-bottom)); padding: 10px 14px; font-size: 14px;}
 }
 
 /* 모바일 전용 줄바꿈 (데스크톱에선 숨김) */
@@ -1082,11 +1117,11 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
 /* 모바일에서 히어로 밖으로 빠진 서브텍스트 */
 .subtext-out {display: block; text-align: center; font-size: 19px; font-weight: 500; color: #E5F800; padding: 24px 16px 4px; margin: 0;}
 
-/* ---------- 모바일 햄버거 메뉴 (≤768px) ---------- */
+/* ---------- 모바일/태블릿 햄버거 메뉴 (≤1024px) ---------- */
 .hamburger {display: none;}
 .mobile-menu {display: none;}
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     header.centerbox {position: relative;}
     header .topset {display: none;}
     header nav {display: none;}
@@ -1154,7 +1189,7 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
 }
 
 /* ---------- 모바일 섹션1 추천 클래스 카드 축소 (≤768px) ---------- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     #section01 .container {gap: 18px;}
     #section01 .container .board, #section01 .container .board2 {padding: 18px;}
 
@@ -1180,6 +1215,7 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
 
     #section01 .botton {width: 190px; height: 46px; font-size: 15px; gap: 8px; border-radius: 13px; margin-top: 50px;}
     #section01 .botton .arrow_img {width: 10px; height: auto;}
+    #section01 {padding-bottom: 0;}
 
     /* 클래스 페이지 '클래스 더보기' 버튼 - 메인 버튼과 동일 사이즈 */
     .mem_category .more_btn {width: 190px; height: 46px; font-size: 15px; gap: 8px; border-radius: 13px; margin: 50px auto 0 auto;}
@@ -1206,6 +1242,14 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     #section02 .content li a .text h3 span {font-size: 16px; word-break: keep-all;}
     #section02 .content li a .text h3 {margin-bottom: 6px; line-height: 1.3;}
     #section02 .content li a .text p {font-size: 13px; line-height: 1.45; word-break: keep-all;}
+
+    /* 모바일: 카드 4개까지만 노출 (4번째는 페이드로 살짝), 버튼으로 전체 펼치기 */
+    #section02 .content-wrapper.is-collapsed .content li:nth-child(n+5) {display: none;}
+    #section02 .content-wrapper.is-collapsed .content li:nth-child(4) {position: relative;}
+    #section02 .content-wrapper.is-collapsed .content li:nth-child(4)::after {content: ""; position: absolute; left: -2px; right: -2px; bottom: -2px; top: 35%; background: linear-gradient(to bottom, rgba(36,36,36,0) 0%, rgba(36,36,36,0.7) 55%, #242424 92%); pointer-events: none; border-radius: 0 0 20px 20px;}
+    #section02 .content-wrapper.is-collapsed .botton {margin-top: 22px;}
+    #section02 .content-wrapper:not(.is-collapsed) .botton:not(.botton--collapse) {display: none;}
+    #section02 .content-wrapper:not(.is-collapsed) .botton--collapse {display: flex; margin-top: 50px;}
 
     /* 섹션3 배너: 모바일 세로 재배치 */
     #section03 .content {flex-direction: column; height: auto; gap: 16px; padding: 40px 16px; justify-content: center;}
@@ -1568,7 +1612,7 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
 
 /* ---------- 모바일 로그인 페이지 (≤600px) ---------- */
 @media (max-width: 600px) {
-    #login {padding: 28px 16px 50px;}
+    #login, #signup {padding: 28px 16px 50px;}
     .login_wrap {border-radius: 18px;}
 
     /* 좌측 비주얼 */
@@ -1635,6 +1679,7 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     .my_classes .cls .ct {height: 140px;}
     .my_classes .cls .cb {padding: 14px;}
     .my_classes .cls .cn {font-size: 14px; margin-bottom: 10px;}
+    .my_classes .cls .cn .cnbr {display: inline;}
     .my_classes .cls .cp {font-size: 12px;}
 }
 
@@ -1664,4 +1709,16 @@ body.cat-open .clickdot-mark:not(.cat-dot) {z-index: 1;}
     /* 내 클래스 필터 탭 */
     .my_tabs {gap: 14px; margin-bottom: 20px;}
     .my_tabs button {font-size: 14px; padding: 0 2px 10px;}
+}
+
+/* 섹션2: 태블릿(2열)에서 2줄까지 노출 + 3번째 줄 페이드, 더보기/접기 */
+@media (min-width: 601px) and (max-width: 1240px) {
+    #section02 .content-wrapper.is-collapsed .content li:nth-child(n+7) {display: none;}
+    #section02 .content-wrapper.is-collapsed .content li:nth-child(5),
+    #section02 .content-wrapper.is-collapsed .content li:nth-child(6) {position: relative;}
+    #section02 .content-wrapper.is-collapsed .content li:nth-child(5)::after,
+    #section02 .content-wrapper.is-collapsed .content li:nth-child(6)::after {content: ""; position: absolute; left: -2px; right: -2px; bottom: -2px; top: 35%; background: linear-gradient(to bottom, rgba(36,36,36,0) 0%, rgba(36,36,36,0.7) 55%, #242424 92%); pointer-events: none; border-radius: 0 0 20px 20px;}
+    #section02 .content-wrapper.is-collapsed .botton {margin-top: 24px;}
+    #section02 .content-wrapper:not(.is-collapsed) .botton:not(.botton--collapse) {display: none;}
+    #section02 .content-wrapper:not(.is-collapsed) .botton--collapse {display: flex; margin-top: 50px;}
 }
