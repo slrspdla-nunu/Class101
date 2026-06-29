@@ -33,6 +33,7 @@
             if (a.textContent.trim() === '카테고리') trigger = a;
         });
         if (!trigger) return;
+        trigger.classList.add('cat-trigger'); // 클릭 표시(흰 박스)용 식별 클래스
 
         var panel = document.createElement('div');
         panel.className = 'cat-mega';
@@ -56,22 +57,8 @@
             });
         });
 
-        // 실제 페이지로 연결되는 메뉴 항목에 네온 점 (메뉴가 열렸을 때만 보임)
-        function markCat(el) {
-            if (!el || el.querySelector(':scope > .clickdot-mark')) return;
-            if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
-            var d = document.createElement('span');
-            d.className = 'clickdot-mark cat-dot';
-            el.appendChild(d);
-        }
-        panel.querySelectorAll('.cat-col').forEach(function (col) {
-            var hasLink = false;
-            col.querySelectorAll('.cat-subs a').forEach(function (a) {
-                var h = a.getAttribute('href');
-                if (h && h !== '#') { markCat(a); hasLink = true; }
-            });
-            if (hasLink) markCat(col.querySelector('.cat-head'));
-        });
+        // 카테고리의 클릭 가능 표시는 CSS 박스 하이라이트(body.show-clickdots a[href])가 처리.
+        // 예전 빨간 점(cat-dot)은 제거해 전체와 통일 — 일러스트 등 실제 링크만 흰 박스로 뜸.
 
         function syncBody() {
             document.body.classList.toggle('cat-open', panel.classList.contains('open'));
@@ -131,7 +118,7 @@
 // 클릭 가능한 요소를 네온 점으로 표시 (토글)
 (function () {
     // 항상 동작하는 컨트롤(메뉴·필터·정렬·캐러셀·더보기) → 무조건 표시
-    var ALWAYS = ['.gnb li a', '.sort_btn', '.cls_nav'];
+    var ALWAYS = ['.gnb li a', '.sort_btn', '.cls_nav', '.hamburger', '.mobile-menu a', '.mobile-menu .mm-cat-top', '.mobile-menu .mm-c1-top'];
     // 조건부: 실제로 페이지 이동/동작이 있을 때만 표시
     var CONDITIONAL = [
         '.board', '.board2', '.mem_card', '.cls_card', '.rec_card',
@@ -200,7 +187,7 @@
         function apply() {
             document.body.classList.toggle('show-clickdots', on);
             btn.querySelector('.cg-label').textContent = on ? '표시 끄기' : '클릭 가능 표시';
-            if (on) addDots(); else removeDots();
+            // 하이라이트는 CSS(body.show-clickdots)가 처리 — 점 DOM 주입 없음
         }
         apply(); // 저장된 상태를 페이지 로드 시 복원
 
